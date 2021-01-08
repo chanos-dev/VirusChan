@@ -1,0 +1,13 @@
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\VirusChan.exe.config
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\VirusChan.exe
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\VirusChan.pdb
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.csprojAssemblyReference.cache
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.MainForm.resources
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.Properties.Resources.resources
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.csproj.GenerateResource.cache
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.csproj.CoreCompileInputs.cache
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.exe
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.pdb
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.csproj.CopyComplete
