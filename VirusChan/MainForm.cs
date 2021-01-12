@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VirusChan.Api;
+using VirusChan.form;
+using VirusChan.Model;
 
 namespace VirusChan
 {
@@ -16,29 +18,37 @@ namespace VirusChan
         enum ButtonType
         {
             Files,
-            Urls
+            Urls,
         }
+
+        enum FormType
+        {
+            FormFile,
+            FormUrl,
+        }
+
+        private FormFiles formFile;
+        private FormUrls formUrls;
 
         public MainForm()
         {
             InitializeComponent();
+            InitializeControl();
         }
 
-        private void panel1_DragDrop(object sender, DragEventArgs e)
-        { 
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            {
-                //file full path
-                string[] strFiles = (string[])e.Data.GetData(DataFormats.FileDrop);  
-            }            
-        }
+        private void InitializeControl()
+        {
+            formFile = new FormFiles();
+            formUrls = new FormUrls();
 
-        private void panel1_DragEnter(object sender, DragEventArgs e)
-        {             
-            if (e.Data.GetDataPresent(DataFormats.FileDrop))
-            { 
-                e.Effect = DragDropEffects.Copy;
-            } 
+            this.Controls.Add(formFile);
+            this.Controls.Add(formUrls);
+
+            formFile.Parent = this.panel_forms;
+            formUrls.Parent = this.panel_forms;
+
+            //default
+            ShowSelectedForm(FormType.FormFile);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -55,14 +65,15 @@ namespace VirusChan
         }
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
+        {            
+            if (this.WindowState == FormWindowState.Minimized)
+            {
+                this.WindowState = FormWindowState.Normal;
+                return;
+            } 
+
             this.Show();
-        }
-
-        private void VirusChanMenuStrip_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
+        } 
 
         private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -92,14 +103,59 @@ namespace VirusChan
             }
         }
 
-        private void btn_files_Click(object sender, EventArgs e)
+        private void ShowSelectedForm(FormType type)
         {
+            switch (type)
+            {
+                case FormType.FormFile:
+                    formFile.Visible = true;
+                    formUrls.Visible = false;
+                    break;
+                case FormType.FormUrl:
+                    formFile.Visible = false;
+                    formUrls.Visible = true;
+                    break;
+            }
+        }
+
+        private void btn_files_Click(object sender, EventArgs e)
+        { 
             MoveSelectedPanel(ButtonType.Files);
+            ShowSelectedForm(FormType.FormFile);
         } 
 
         private void btn_urls_Click(object sender, EventArgs e)
         {
             MoveSelectedPanel(ButtonType.Urls);
+            ShowSelectedForm(FormType.FormUrl);
+        }
+
+        private void Button_MouseEnter(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+                button.ForeColor = Color.FromArgb(230, 245, 255);
+        }
+
+        private void Button_MouseLeave(object sender, EventArgs e)
+        {
+            if (sender is Button button)
+                button.ForeColor = Color.FromArgb(63, 130, 242);
+        }
+
+        private void FileScanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MoveSelectedPanel(ButtonType.Files);
+            ShowSelectedForm(FormType.FormFile);
+
+            notifyIcon_MouseDoubleClick(null, null);
+        }
+
+        private void UrlScanToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MoveSelectedPanel(ButtonType.Urls);
+            ShowSelectedForm(FormType.FormUrl);
+
+            notifyIcon_MouseDoubleClick(null, null);
         }
     } 
 }

@@ -11,3 +11,5 @@ C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.pdb
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.csproj.CopyComplete
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormFIles.resources
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormUrls.resources

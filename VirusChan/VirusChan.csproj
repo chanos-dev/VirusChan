@@ -58,6 +58,18 @@
     <Compile Include="Api\RequestAPI.cs" />
     <Compile Include="Api\UrlAPI.cs" />
     <Compile Include="Api\FileAPI.cs" />
+    <Compile Include="form\FormFiles.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\FormFiles.Designer.cs">
+      <DependentUpon>FormFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="form\FormUrls.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\FormUrls.Designer.cs">
+      <DependentUpon>FormUrls.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +80,12 @@
     <Compile Include="Model\VirusTotal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\FormFiles.resx">
+      <DependentUpon>FormFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="form\FormUrls.resx">
+      <DependentUpon>FormUrls.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,11 +114,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="image\urls.png" />
+    <None Include="image\files.png" />
     <None Include="image\title.png" />
     <None Include="image\cancel.png" />
     <None Include="image\minus.png" />
-    <None Include="image\delete.png" />
     <Content Include="VirusChan.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

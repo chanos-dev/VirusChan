@@ -32,27 +32,31 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.panel_main = new System.Windows.Forms.Panel();
             this.panel_center = new System.Windows.Forms.Panel();
+            this.panel_forms = new System.Windows.Forms.Panel();
+            this.panel_selected = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_files = new System.Windows.Forms.Button();
+            this.btn_urls = new System.Windows.Forms.Button();
             this.panel_top = new System.Windows.Forms.Panel();
+            this.pb_title = new System.Windows.Forms.PictureBox();
+            this.pb_minimum = new System.Windows.Forms.PictureBox();
+            this.pb_close = new System.Windows.Forms.PictureBox();
             this.lb_title = new System.Windows.Forms.Label();
             this.panel_bottom = new System.Windows.Forms.Panel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.VirusChanMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.btn_files = new System.Windows.Forms.Button();
-            this.btn_urls = new System.Windows.Forms.Button();
-            this.panel_selected = new System.Windows.Forms.Panel();
-            this.pb_title = new System.Windows.Forms.PictureBox();
-            this.pb_minimum = new System.Windows.Forms.PictureBox();
-            this.pb_close = new System.Windows.Forms.PictureBox();
+            this.FileScanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.UrlScanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.panel_main.SuspendLayout();
             this.panel_center.SuspendLayout();
-            this.panel_top.SuspendLayout();
-            this.VirusChanMenuStrip.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
+            this.panel_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_title)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_minimum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_close)).BeginInit();
+            this.VirusChanMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main
@@ -69,6 +73,7 @@
             // 
             // panel_center
             // 
+            this.panel_center.Controls.Add(this.panel_forms);
             this.panel_center.Controls.Add(this.panel_selected);
             this.panel_center.Controls.Add(this.flowLayoutPanel);
             this.panel_center.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -77,63 +82,21 @@
             this.panel_center.Size = new System.Drawing.Size(350, 390);
             this.panel_center.TabIndex = 2;
             // 
-            // panel_top
+            // panel_forms
             // 
-            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.panel_top.Controls.Add(this.pb_title);
-            this.panel_top.Controls.Add(this.pb_minimum);
-            this.panel_top.Controls.Add(this.pb_close);
-            this.panel_top.Controls.Add(this.lb_title);
-            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel_top.Font = new System.Drawing.Font("Comic Sans MS", 9F);
-            this.panel_top.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.panel_top.Location = new System.Drawing.Point(0, 0);
-            this.panel_top.Name = "panel_top";
-            this.panel_top.Size = new System.Drawing.Size(350, 30);
-            this.panel_top.TabIndex = 1;
+            this.panel_forms.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_forms.Location = new System.Drawing.Point(0, 42);
+            this.panel_forms.Name = "panel_forms";
+            this.panel_forms.Size = new System.Drawing.Size(350, 348);
+            this.panel_forms.TabIndex = 2;
             // 
-            // lb_title
+            // panel_selected
             // 
-            this.lb_title.AutoSize = true;
-            this.lb_title.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lb_title.Location = new System.Drawing.Point(29, 8);
-            this.lb_title.Name = "lb_title";
-            this.lb_title.Size = new System.Drawing.Size(81, 15);
-            this.lb_title.TabIndex = 1;
-            this.lb_title.Text = "VirusChan";
-            // 
-            // panel_bottom
-            // 
-            this.panel_bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel_bottom.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.panel_bottom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.panel_bottom.Location = new System.Drawing.Point(0, 420);
-            this.panel_bottom.Name = "panel_bottom";
-            this.panel_bottom.Size = new System.Drawing.Size(350, 30);
-            this.panel_bottom.TabIndex = 0;
-            // 
-            // notifyIcon
-            // 
-            this.notifyIcon.ContextMenuStrip = this.VirusChanMenuStrip;
-            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
-            this.notifyIcon.Text = "VirusChan";
-            this.notifyIcon.Visible = true;
-            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
-            // 
-            // VirusChanMenuStrip
-            // 
-            this.VirusChanMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.CloseToolStripMenuItem});
-            this.VirusChanMenuStrip.Name = "contextMenuStrip1";
-            this.VirusChanMenuStrip.Size = new System.Drawing.Size(99, 26);
-            // 
-            // CloseToolStripMenuItem
-            // 
-            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
-            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
-            this.CloseToolStripMenuItem.Text = "닫기";
-            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
+            this.panel_selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.panel_selected.Location = new System.Drawing.Point(3, 36);
+            this.panel_selected.Name = "panel_selected";
+            this.panel_selected.Size = new System.Drawing.Size(165, 6);
+            this.panel_selected.TabIndex = 1;
             // 
             // flowLayoutPanel
             // 
@@ -160,6 +123,8 @@
             this.btn_files.Text = "파일";
             this.btn_files.UseVisualStyleBackColor = false;
             this.btn_files.Click += new System.EventHandler(this.btn_files_Click);
+            this.btn_files.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.btn_files.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
             // btn_urls
             // 
@@ -172,14 +137,23 @@
             this.btn_urls.Text = "URL";
             this.btn_urls.UseVisualStyleBackColor = true;
             this.btn_urls.Click += new System.EventHandler(this.btn_urls_Click);
+            this.btn_urls.MouseEnter += new System.EventHandler(this.Button_MouseEnter);
+            this.btn_urls.MouseLeave += new System.EventHandler(this.Button_MouseLeave);
             // 
-            // panel_selected
+            // panel_top
             // 
-            this.panel_selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.panel_selected.Location = new System.Drawing.Point(3, 36);
-            this.panel_selected.Name = "panel_selected";
-            this.panel_selected.Size = new System.Drawing.Size(165, 6);
-            this.panel_selected.TabIndex = 1;
+            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.panel_top.Controls.Add(this.pb_title);
+            this.panel_top.Controls.Add(this.pb_minimum);
+            this.panel_top.Controls.Add(this.pb_close);
+            this.panel_top.Controls.Add(this.lb_title);
+            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.panel_top.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
+            this.panel_top.Name = "panel_top";
+            this.panel_top.Size = new System.Drawing.Size(350, 30);
+            this.panel_top.TabIndex = 1;
             // 
             // pb_title
             // 
@@ -213,6 +187,71 @@
             this.pb_close.TabStop = false;
             this.pb_close.Click += new System.EventHandler(this.pb_close_Click);
             // 
+            // lb_title
+            // 
+            this.lb_title.AutoSize = true;
+            this.lb_title.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_title.Location = new System.Drawing.Point(29, 8);
+            this.lb_title.Name = "lb_title";
+            this.lb_title.Size = new System.Drawing.Size(81, 15);
+            this.lb_title.TabIndex = 1;
+            this.lb_title.Text = "VirusChan";
+            // 
+            // panel_bottom
+            // 
+            this.panel_bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_bottom.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.panel_bottom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panel_bottom.Location = new System.Drawing.Point(0, 420);
+            this.panel_bottom.Name = "panel_bottom";
+            this.panel_bottom.Size = new System.Drawing.Size(350, 30);
+            this.panel_bottom.TabIndex = 0;
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.VirusChanMenuStrip;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "VirusChan";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // VirusChanMenuStrip
+            // 
+            this.VirusChanMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.FileScanToolStripMenuItem,
+            this.UrlScanToolStripMenuItem,
+            this.toolStripMenuItem1,
+            this.CloseToolStripMenuItem});
+            this.VirusChanMenuStrip.Name = "contextMenuStrip1";
+            this.VirusChanMenuStrip.Size = new System.Drawing.Size(135, 76);
+            // 
+            // CloseToolStripMenuItem
+            // 
+            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
+            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CloseToolStripMenuItem.Text = "닫기";
+            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
+            // 
+            // FileScanToolStripMenuItem
+            // 
+            this.FileScanToolStripMenuItem.Name = "FileScanToolStripMenuItem";
+            this.FileScanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.FileScanToolStripMenuItem.Text = "파일스캔";
+            this.FileScanToolStripMenuItem.Click += new System.EventHandler(this.FileScanToolStripMenuItem_Click);
+            // 
+            // UrlScanToolStripMenuItem
+            // 
+            this.UrlScanToolStripMenuItem.Name = "UrlScanToolStripMenuItem";
+            this.UrlScanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UrlScanToolStripMenuItem.Text = "사이트스캔";
+            this.UrlScanToolStripMenuItem.Click += new System.EventHandler(this.UrlScanToolStripMenuItem_Click);
+            // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -223,16 +262,17 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel_main.ResumeLayout(false);
             this.panel_center.ResumeLayout(false);
+            this.flowLayoutPanel.ResumeLayout(false);
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
-            this.VirusChanMenuStrip.ResumeLayout(false);
-            this.flowLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_title)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_minimum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_close)).EndInit();
+            this.VirusChanMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,6 +294,10 @@
         private System.Windows.Forms.Button btn_urls;
         private System.Windows.Forms.Panel panel_selected;
         private System.Windows.Forms.PictureBox pb_title;
+        private System.Windows.Forms.Panel panel_forms;
+        private System.Windows.Forms.ToolStripMenuItem FileScanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem UrlScanToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
     }
 }
 
