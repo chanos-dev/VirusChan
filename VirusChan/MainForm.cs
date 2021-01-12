@@ -44,7 +44,7 @@ namespace VirusChan
         private void button1_Click(object sender, EventArgs e)
         {
             FileAPI fileAPI = new FileAPI(); 
-            var test = fileAPI.FileReport("F25299AF3D51D09D073C588C552C952E");                   
+            var test = fileAPI.FileReport("key");                   
         }
 
         private void MainForm_Load(object sender, EventArgs e)
