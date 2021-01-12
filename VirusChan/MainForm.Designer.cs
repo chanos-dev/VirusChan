@@ -28,60 +28,232 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
+            this.panel_main = new System.Windows.Forms.Panel();
+            this.panel_center = new System.Windows.Forms.Panel();
+            this.panel_top = new System.Windows.Forms.Panel();
+            this.lb_title = new System.Windows.Forms.Label();
+            this.panel_bottom = new System.Windows.Forms.Panel();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.VirusChanMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.btn_files = new System.Windows.Forms.Button();
+            this.btn_urls = new System.Windows.Forms.Button();
+            this.panel_selected = new System.Windows.Forms.Panel();
+            this.pb_title = new System.Windows.Forms.PictureBox();
+            this.pb_minimum = new System.Windows.Forms.PictureBox();
+            this.pb_close = new System.Windows.Forms.PictureBox();
+            this.panel_main.SuspendLayout();
+            this.panel_center.SuspendLayout();
+            this.panel_top.SuspendLayout();
+            this.VirusChanMenuStrip.SuspendLayout();
+            this.flowLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_title)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_minimum)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_close)).BeginInit();
             this.SuspendLayout();
             // 
-            // panel1
+            // panel_main
             // 
-            this.panel1.AllowDrop = true;
-            this.panel1.Location = new System.Drawing.Point(36, 34);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(316, 393);
-            this.panel1.TabIndex = 0;
-            this.panel1.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel1_DragDrop);
-            this.panel1.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel1_DragEnter);
+            this.panel_main.Controls.Add(this.panel_center);
+            this.panel_main.Controls.Add(this.panel_top);
+            this.panel_main.Controls.Add(this.panel_bottom);
+            this.panel_main.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_main.Location = new System.Drawing.Point(0, 0);
+            this.panel_main.Name = "panel_main";
+            this.panel_main.Size = new System.Drawing.Size(350, 450);
+            this.panel_main.TabIndex = 0;
             // 
-            // label1
+            // panel_center
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(489, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 12);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "label1";
+            this.panel_center.Controls.Add(this.panel_selected);
+            this.panel_center.Controls.Add(this.flowLayoutPanel);
+            this.panel_center.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_center.Location = new System.Drawing.Point(0, 30);
+            this.panel_center.Name = "panel_center";
+            this.panel_center.Size = new System.Drawing.Size(350, 390);
+            this.panel_center.TabIndex = 2;
             // 
-            // button1
+            // panel_top
             // 
-            this.button1.Location = new System.Drawing.Point(491, 261);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(97, 35);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.panel_top.Controls.Add(this.pb_title);
+            this.panel_top.Controls.Add(this.pb_minimum);
+            this.panel_top.Controls.Add(this.pb_close);
+            this.panel_top.Controls.Add(this.lb_title);
+            this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel_top.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.panel_top.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panel_top.Location = new System.Drawing.Point(0, 0);
+            this.panel_top.Name = "panel_top";
+            this.panel_top.Size = new System.Drawing.Size(350, 30);
+            this.panel_top.TabIndex = 1;
+            // 
+            // lb_title
+            // 
+            this.lb_title.AutoSize = true;
+            this.lb_title.Font = new System.Drawing.Font("Comic Sans MS", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lb_title.Location = new System.Drawing.Point(29, 8);
+            this.lb_title.Name = "lb_title";
+            this.lb_title.Size = new System.Drawing.Size(81, 15);
+            this.lb_title.TabIndex = 1;
+            this.lb_title.Text = "VirusChan";
+            // 
+            // panel_bottom
+            // 
+            this.panel_bottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.panel_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel_bottom.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.panel_bottom.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.panel_bottom.Location = new System.Drawing.Point(0, 420);
+            this.panel_bottom.Name = "panel_bottom";
+            this.panel_bottom.Size = new System.Drawing.Size(350, 30);
+            this.panel_bottom.TabIndex = 0;
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.VirusChanMenuStrip;
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "VirusChan";
+            this.notifyIcon.Visible = true;
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // VirusChanMenuStrip
+            // 
+            this.VirusChanMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.CloseToolStripMenuItem});
+            this.VirusChanMenuStrip.Name = "contextMenuStrip1";
+            this.VirusChanMenuStrip.Size = new System.Drawing.Size(99, 26);
+            // 
+            // CloseToolStripMenuItem
+            // 
+            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
+            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(98, 22);
+            this.CloseToolStripMenuItem.Text = "닫기";
+            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
+            // 
+            // flowLayoutPanel
+            // 
+            this.flowLayoutPanel.Controls.Add(this.btn_files);
+            this.flowLayoutPanel.Controls.Add(this.btn_urls);
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel.Font = new System.Drawing.Font("Comic Sans MS", 9F);
+            this.flowLayoutPanel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(350, 37);
+            this.flowLayoutPanel.TabIndex = 0;
+            // 
+            // btn_files
+            // 
+            this.btn_files.BackColor = System.Drawing.SystemColors.Control;
+            this.btn_files.FlatAppearance.BorderSize = 0;
+            this.btn_files.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_files.Location = new System.Drawing.Point(3, 3);
+            this.btn_files.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btn_files.Name = "btn_files";
+            this.btn_files.Size = new System.Drawing.Size(165, 30);
+            this.btn_files.TabIndex = 0;
+            this.btn_files.Text = "파일";
+            this.btn_files.UseVisualStyleBackColor = false;
+            this.btn_files.Click += new System.EventHandler(this.btn_files_Click);
+            // 
+            // btn_urls
+            // 
+            this.btn_urls.FlatAppearance.BorderSize = 0;
+            this.btn_urls.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_urls.Location = new System.Drawing.Point(181, 3);
+            this.btn_urls.Name = "btn_urls";
+            this.btn_urls.Size = new System.Drawing.Size(165, 30);
+            this.btn_urls.TabIndex = 1;
+            this.btn_urls.Text = "URL";
+            this.btn_urls.UseVisualStyleBackColor = true;
+            this.btn_urls.Click += new System.EventHandler(this.btn_urls_Click);
+            // 
+            // panel_selected
+            // 
+            this.panel_selected.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.panel_selected.Location = new System.Drawing.Point(3, 36);
+            this.panel_selected.Name = "panel_selected";
+            this.panel_selected.Size = new System.Drawing.Size(165, 6);
+            this.panel_selected.TabIndex = 1;
+            // 
+            // pb_title
+            // 
+            this.pb_title.Image = global::VirusChan.Properties.Resources.title;
+            this.pb_title.Location = new System.Drawing.Point(6, 6);
+            this.pb_title.Name = "pb_title";
+            this.pb_title.Size = new System.Drawing.Size(20, 20);
+            this.pb_title.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_title.TabIndex = 4;
+            this.pb_title.TabStop = false;
+            // 
+            // pb_minimum
+            // 
+            this.pb_minimum.Image = global::VirusChan.Properties.Resources.minus;
+            this.pb_minimum.Location = new System.Drawing.Point(304, 7);
+            this.pb_minimum.Name = "pb_minimum";
+            this.pb_minimum.Size = new System.Drawing.Size(18, 18);
+            this.pb_minimum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_minimum.TabIndex = 3;
+            this.pb_minimum.TabStop = false;
+            this.pb_minimum.Click += new System.EventHandler(this.pb_minimum_Click);
+            // 
+            // pb_close
+            // 
+            this.pb_close.Image = global::VirusChan.Properties.Resources.cancel;
+            this.pb_close.Location = new System.Drawing.Point(325, 7);
+            this.pb_close.Name = "pb_close";
+            this.pb_close.Size = new System.Drawing.Size(18, 18);
+            this.pb_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_close.TabIndex = 2;
+            this.pb_close.TabStop = false;
+            this.pb_close.Click += new System.EventHandler(this.pb_close_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(350, 450);
+            this.Controls.Add(this.panel_main);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.Text = "MainForm";
+            this.Load += new System.EventHandler(this.MainForm_Load);
+            this.panel_main.ResumeLayout(false);
+            this.panel_center.ResumeLayout(false);
+            this.panel_top.ResumeLayout(false);
+            this.panel_top.PerformLayout();
+            this.VirusChanMenuStrip.ResumeLayout(false);
+            this.flowLayoutPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pb_title)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_minimum)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pb_close)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel panel_main;
+        private System.Windows.Forms.Panel panel_bottom;
+        private System.Windows.Forms.Panel panel_top;
+        private System.Windows.Forms.Label lb_title;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip VirusChanMenuStrip;
+        private System.Windows.Forms.ToolStripMenuItem CloseToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pb_close;
+        private System.Windows.Forms.Panel panel_center;
+        private System.Windows.Forms.PictureBox pb_minimum;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel;
+        private System.Windows.Forms.Button btn_files;
+        private System.Windows.Forms.Button btn_urls;
+        private System.Windows.Forms.Panel panel_selected;
+        private System.Windows.Forms.PictureBox pb_title;
     }
 }
 
