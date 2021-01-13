@@ -29,6 +29,7 @@ namespace VirusChan
 
         private FormFiles formFile;
         private FormUrls formUrls;
+        private ApiController ApiController;
 
         public MainForm()
         {
@@ -38,8 +39,10 @@ namespace VirusChan
 
         private void InitializeControl()
         {
-            formFile = new FormFiles();
-            formUrls = new FormUrls();
+            ApiController = new ApiController("your virustotal api key");
+
+            formFile = new FormFiles(ApiController);
+            formUrls = new FormUrls(ApiController);
 
             this.Controls.Add(formFile);
             this.Controls.Add(formUrls);
@@ -48,7 +51,7 @@ namespace VirusChan
             formUrls.Parent = this.panel_forms;
 
             //default
-            ShowSelectedForm(FormType.FormFile);
+            ShowSelectedForm(FormType.FormFile);            
         }
 
         private void button1_Click(object sender, EventArgs e)

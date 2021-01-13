@@ -9,6 +9,14 @@ using System.Threading.Tasks;
 
 namespace VirusChan.Model
 {
+    public enum VirusTotalState
+    {        
+        Ready,
+        Working,
+        Finished,
+        Error,
+    }
+
     class VirusTotal
     { 
         public static string GetMD5(string filePath)

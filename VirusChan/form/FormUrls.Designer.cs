@@ -29,23 +29,32 @@
         private void InitializeComponent()
         {
             this.pb_files = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pb_files)).BeginInit();
             this.SuspendLayout();
             // 
             // pb_files
             // 
             this.pb_files.Image = global::VirusChan.Properties.Resources.urls;
-            this.pb_files.Location = new System.Drawing.Point(126, 30);
+            this.pb_files.Location = new System.Drawing.Point(126, 22);
             this.pb_files.Name = "pb_files";
             this.pb_files.Size = new System.Drawing.Size(100, 100);
             this.pb_files.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_files.TabIndex = 1;
             this.pb_files.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(25, 142);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(305, 24);
+            this.textBox1.TabIndex = 2;
+            // 
             // FormUrls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.pb_files);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -53,11 +62,13 @@
             this.Size = new System.Drawing.Size(350, 348);
             ((System.ComponentModel.ISupportInitialize)(this.pb_files)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.PictureBox pb_files;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

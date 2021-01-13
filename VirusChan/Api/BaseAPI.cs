@@ -8,7 +8,8 @@ namespace VirusChan.Api
 {
     public abstract class BaseAPI
     {
-        protected string ApiKey => "your virustotal api key";
+        //protected string ApiKey => "your virustotal api key";
+        public static string ApiKey { get; set; }
 
         protected int TimeOut => 3000;
 

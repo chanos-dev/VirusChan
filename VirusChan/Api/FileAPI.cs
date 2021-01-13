@@ -19,7 +19,7 @@ namespace VirusChan.Api
 
             Dictionary<string, string> ApiParams = new Dictionary<string, string>()
             {
-                ["apikey"] = this.ApiKey,
+                ["apikey"] = ApiKey,
                 ["resource"] = resource
             };
 

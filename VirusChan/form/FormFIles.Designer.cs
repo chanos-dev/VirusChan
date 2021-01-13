@@ -29,14 +29,19 @@
         private void InitializeComponent()
         {
             this.panel_main = new System.Windows.Forms.Panel();
+            this.btn_start = new System.Windows.Forms.Button();
+            this.FileListView = new BrightIdeasSoftware.ObjectListView();
             this.pb_files = new System.Windows.Forms.PictureBox();
             this.panel_main.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.FileListView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_files)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_main
             // 
             this.panel_main.AllowDrop = true;
+            this.panel_main.Controls.Add(this.btn_start);
+            this.panel_main.Controls.Add(this.FileListView);
             this.panel_main.Controls.Add(this.pb_files);
             this.panel_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_main.Location = new System.Drawing.Point(0, 0);
@@ -46,26 +51,54 @@
             this.panel_main.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel_main_DragDrop);
             this.panel_main.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel_main_DragEnter);
             // 
+            // btn_start
+            // 
+            this.btn_start.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_start.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.btn_start.Location = new System.Drawing.Point(14, 313);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(320, 27);
+            this.btn_start.TabIndex = 2;
+            this.btn_start.Text = "스캔 시작";
+            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
+            // 
+            // FileListView
+            // 
+            this.FileListView.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.FileListView.HideSelection = false;
+            this.FileListView.Location = new System.Drawing.Point(14, 141);
+            this.FileListView.Name = "FileListView";
+            this.FileListView.Size = new System.Drawing.Size(320, 166);
+            this.FileListView.TabIndex = 1;
+            this.FileListView.UseCompatibleStateImageBehavior = false;
+            this.FileListView.View = System.Windows.Forms.View.Details;
+            this.FileListView.FormatRow += new System.EventHandler<BrightIdeasSoftware.FormatRowEventArgs>(this.FileListView_FormatRow);
+            this.FileListView.DoubleClick += new System.EventHandler(this.FileListView_DoubleClick);
+            // 
             // pb_files
             // 
             this.pb_files.Image = global::VirusChan.Properties.Resources.files;
-            this.pb_files.Location = new System.Drawing.Point(133, 30);
+            this.pb_files.Location = new System.Drawing.Point(133, 22);
             this.pb_files.Name = "pb_files";
             this.pb_files.Size = new System.Drawing.Size(85, 100);
             this.pb_files.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_files.TabIndex = 0;
             this.pb_files.TabStop = false;
             // 
-            // FormFIles
+            // FormFiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel_main);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FormFIles";
+            this.Name = "FormFiles";
             this.Size = new System.Drawing.Size(350, 348);
             this.panel_main.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.FileListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_files)).EndInit();
             this.ResumeLayout(false);
 
@@ -75,5 +108,7 @@
 
         private System.Windows.Forms.Panel panel_main;
         private System.Windows.Forms.PictureBox pb_files;
+        private BrightIdeasSoftware.ObjectListView FileListView;
+        private System.Windows.Forms.Button btn_start;
     }
 }
