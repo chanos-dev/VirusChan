@@ -87,6 +87,9 @@
             this.pb_files.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pb_files.TabIndex = 0;
             this.pb_files.TabStop = false;
+            this.pb_files.Click += new System.EventHandler(this.pb_files_Click);
+            this.pb_files.MouseEnter += new System.EventHandler(this.pb_files_MouseEnter);
+            this.pb_files.MouseLeave += new System.EventHandler(this.pb_files_MouseLeave);
             // 
             // FormFiles
             // 

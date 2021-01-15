@@ -52,13 +52,7 @@ namespace VirusChan
 
             //default
             ShowSelectedForm(FormType.FormFile);            
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            FileAPI fileAPI = new FileAPI(); 
-            var test = fileAPI.FileReport("key");                   
-        }
+        } 
 
         private void MainForm_Load(object sender, EventArgs e)
         {

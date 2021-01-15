@@ -11,6 +11,7 @@ using System.IO;
 using VirusChan.Model;
 using BrightIdeasSoftware;
 using VirusChan.Api;
+using VirusChan.Properties;
 
 namespace VirusChan.form
 {
@@ -78,12 +79,7 @@ namespace VirusChan.form
 
                 FileListView.SetObjects(lists);
             }            
-        }
-
-        private void FileListView_FormatCell(object sender, FormatCellEventArgs e)
-        {
-            
-        }
+        } 
 
         private void FileListView_FormatRow(object sender, FormatRowEventArgs e)
         {
@@ -97,6 +93,9 @@ namespace VirusChan.form
         {
             if (FileListView.Items.Count < 1)
                 return;
+
+
+            //thread file scan 
 
             foreach(var file in FileListView.Objects)
             {
@@ -122,6 +121,41 @@ namespace VirusChan.form
             {
                 //double click test
                 MessageBox.Show(fileFormat.FileScan.sha1);
+            }
+        } 
+
+        private void pb_files_MouseLeave(object sender, EventArgs e)
+        {
+            pb_files.Image = Resources.files;
+        }
+
+        private void pb_files_MouseEnter(object sender, EventArgs e)
+        {
+            pb_files.Image = Resources.files_off;
+        }
+
+        private void pb_files_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog fileDialog = new OpenFileDialog())
+            {
+                fileDialog.Multiselect = true;                
+                fileDialog.ShowDialog();
+
+                string[] files = fileDialog.FileNames;
+
+                List<FileFormat> lists = new List<FileFormat>();
+
+                for (int i = 0; i < files.Length; i++)
+                {
+                    FileFormat file = new FileFormat();
+                    file.FileName = Path.GetFileName(files[i]);
+                    file.FileSize = File.OpenRead(files[i]).Length;
+                    file.FileFullPath = files[i];
+                    file.FileState = VirusTotalState.Ready;
+                    lists.Add(file);
+                } 
+
+                FileListView.SetObjects(lists);
             }
         }
     }

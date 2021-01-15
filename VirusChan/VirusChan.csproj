@@ -133,6 +133,7 @@
     <None Include="image\title.png" />
     <None Include="image\cancel.png" />
     <None Include="image\minus.png" />
+    <None Include="image\files_off.png" />
     <Content Include="VirusChan.ico" />
   </ItemGroup>
   <ItemGroup />
