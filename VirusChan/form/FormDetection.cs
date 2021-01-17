@@ -11,6 +11,7 @@ using BrightIdeasSoftware;
 using VirusChan.Model;
 using System.Threading;
 using System.Reflection;
+using VirusChan.Properties;
 
 namespace VirusChan.form
 {
@@ -21,20 +22,7 @@ namespace VirusChan.form
         {
             InitializeComponent();
             this.FileScan = fileScan;
-            InitializeControl(); 
-            
-            PropertyInfo[] propertyInfos = FileScan.scans.GetType().GetProperties();
-
-            foreach (PropertyInfo propertyInfo in propertyInfos)
-            { 
-                string engine = propertyInfo.Name;
-                bool detected = false;
-                string version = "";
-                string result = "";
-                string update = "";  
-                
-            }
-
+            InitializeControl();   
             SettingDetectionList();
         } 
 
@@ -44,11 +32,14 @@ namespace VirusChan.form
             DetectionListView.ShowGroups = false;
             DetectionListView.HeaderUsesThemes = false;
             DetectionListView.HideSelection = true;
+            DetectionListView.UseCellFormatEvents = true;
 
             OLVColumn[] columns = new[]
             {
-                ListViewData.CreateColumn("DetectionEngine", "탐지엔진", "DetectionEngine", 265),
-                ListViewData.CreateColumn("DetectionResult", "결과", "DetectionResult", 265),
+                ListViewData.CreateColumn("DetectionEngine", "탐지엔진", "DetectionEngine", 165),
+                ListViewData.CreateColumn("Detected", "탐지", "Detected", 105), //150
+                ListViewData.CreateColumn("DetectionVersion", "엔진버전", "DetectionVersion", 100),
+                ListViewData.CreateColumn("DetectionResult", "결과", "DetectionResult", 150),
             };
              
             ColumnHeader[] headers = new ColumnHeader[columns.Length];
@@ -64,30 +55,34 @@ namespace VirusChan.form
 
         private void SettingDetectionList()
         {
-            Task.Factory.StartNew(() =>
+            Task<List<Detection>>.Factory.StartNew(() =>
             {
-                ShowProcess(true);
+                ShowProcess(true); 
 
                 List<Detection> detections = new List<Detection>();
+
                 PropertyInfo[] propertyInfos = FileScan.scans.GetType().GetProperties();
 
-                foreach(PropertyInfo propertyInfo in propertyInfos)
-                {                    
-                    if (propertyInfo.PropertyType == typeof(Bkav))
+                foreach (PropertyInfo propertyInfo in propertyInfos)
+                {
+                    dynamic DetectionEngineClass = FileScan.scans.GetType().GetProperty(propertyInfo.Name).GetValue(FileScan.scans, null);
+
+                    if (DetectionEngineClass != null)
                     {
+                        string engine = propertyInfo.Name;
+                        bool detected = DetectionEngineClass.detected;
+                        string version = DetectionEngineClass.version;
+                        string result = DetectionEngineClass.result;
+                        string update = DetectionEngineClass.update;
 
+                        detections.Add(Detection.CreateDetection(engine, detected, version, result, update)); 
                     }
-                    string engine = propertyInfo.Name;
-                    bool detected = false;
-                    string version = "";
-                    string result = "";
-                    string update = "";
-
-                    detections.Add(Detection.CreateDetection(engine, detected, version, result, update));
                 }
 
+                return detections;
             }).ContinueWith(e =>
-            {
+            {                
+                DetectionListView.SetObjects(e.Result);
                 ShowProcess(false);
             });
         }
@@ -103,5 +98,19 @@ namespace VirusChan.form
                 pb_process.Visible = flag;
             }
         }
+
+        private void DetectionListView_FormatCell(object sender, FormatCellEventArgs e)
+        {
+            if (e.Model is Detection detection)
+            {
+                if (e.ColumnIndex == 1)
+                {
+                    if (detection.Detected)
+                        e.SubItem.Decoration = new ImageDecoration(Resources.checked_red, 1000, ContentAlignment.MiddleRight);
+                    else
+                        e.SubItem.Decoration = new ImageDecoration(Resources.checked_green, 1000, ContentAlignment.MiddleRight);
+                }
+            }
+        } 
     }
 }

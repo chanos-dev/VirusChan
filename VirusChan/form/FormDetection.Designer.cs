@@ -45,6 +45,7 @@
             this.DetectionListView.TabIndex = 0;
             this.DetectionListView.UseCompatibleStateImageBehavior = false;
             this.DetectionListView.View = System.Windows.Forms.View.Details;
+            this.DetectionListView.FormatCell += new System.EventHandler<BrightIdeasSoftware.FormatCellEventArgs>(this.DetectionListView_FormatCell);
             // 
             // pb_process
             // 

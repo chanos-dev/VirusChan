@@ -32,7 +32,8 @@ namespace VirusChan.form
         private FileScan FileScan { get; set; } = null;
 
         private FormSummary FormSummary { get; set; } = null;
-        private FormDetection FormDetection { get; set; } = null;     
+        private FormDetection FormDetection { get; set; } = null;
+        private FormDetails FormDetails { get; set; } = null;
 
         public FormFileScanDetail(FileScan fileScan)
         {
@@ -45,12 +46,15 @@ namespace VirusChan.form
         {
             FormSummary = new FormSummary(FileScan);
             FormDetection = new FormDetection(FileScan);
+            FormDetails = new FormDetails(FileScan);
 
             this.Controls.Add(FormSummary);
             this.Controls.Add(FormDetection);
+            this.Controls.Add(FormDetails);
 
             FormSummary.Parent = this.panel_forms;
             FormDetection.Parent = this.panel_forms;
+            FormDetails.Parent = this.panel_forms;
 
             ShowSelectedForm(FormType.Summary);
         }
@@ -62,10 +66,17 @@ namespace VirusChan.form
                 case FormType.Summary:
                     FormSummary.Visible = true;
                     FormDetection.Visible = false;
+                    FormDetails.Visible = false;
                     break;
                 case FormType.Detection:
                     FormSummary.Visible = false;
                     FormDetection.Visible = true;
+                    FormDetails.Visible = false;
+                    break;
+                case FormType.Details:
+                    FormSummary.Visible = false;
+                    FormDetection.Visible = false;
+                    FormDetails.Visible = true;
                     break;
             }
         }
@@ -88,7 +99,7 @@ namespace VirusChan.form
         private void panel_top_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
-            {
+            { 
                 this.Location = new Point(this.Left - (mousePoint.X - e.X), this.Top - (mousePoint.Y - e.Y));
             }
         }
@@ -124,6 +135,7 @@ namespace VirusChan.form
         private void btn_Details_Click(object sender, EventArgs e)
         {
             MoveSelectedPanel(ButtonType.Details);
+            ShowSelectedForm(FormType.Details);
         }
     }
 }

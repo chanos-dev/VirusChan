@@ -71,6 +71,12 @@
     <Compile Include="Api\RequestAPI.cs" />
     <Compile Include="Api\UrlAPI.cs" />
     <Compile Include="Api\FileAPI.cs" />
+    <Compile Include="form\FormDetails.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="form\FormDetails.Designer.cs">
+      <DependentUpon>FormDetails.cs</DependentUpon>
+    </Compile>
     <Compile Include="form\FormFileScanDetail.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     <Compile Include="Model\VirusTotal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="form\FormDetails.resx">
+      <DependentUpon>FormDetails.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="form\FormDetection.resx">
       <DependentUpon>FormDetection.cs</DependentUpon>
     </EmbeddedResource>
@@ -166,6 +175,8 @@
     <None Include="image\minus.png" />
     <None Include="image\files_off.png" />
     <None Include="image\process.gif" />
+    <None Include="image\checked_green.png" />
+    <None Include="image\checked_red.png" />
     <Content Include="VirusChan.ico" />
   </ItemGroup>
   <ItemGroup />

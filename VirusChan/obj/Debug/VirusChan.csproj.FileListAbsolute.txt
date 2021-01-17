@@ -21,3 +21,4 @@ C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormDet
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormSummary.resources
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\System.ValueTuple.dll
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\System.ValueTuple.xml
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormDetails.resources

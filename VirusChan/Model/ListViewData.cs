@@ -37,15 +37,33 @@ namespace VirusChan.Model
             
             style.SetForeColor(Color.FromArgb(63, 130, 242));
             style.SetFont(new Font("Comic Sans MS", 10, FontStyle.Bold));
-            
+
             OLVColumn column = new OLVColumn()
             {
                 Name = name,
                 Text = text,
                 AspectName = aspect,
                 Width = width,
-                HeaderFormatStyle = style,                                
+                HeaderFormatStyle = style, 
             };
+
+            if (name.Equals("Detected"))
+            {
+                column.AspectGetter = delegate(object obj)
+                {
+                    if (obj is Detection detection)
+                    {
+                        if (detection.Detected)
+                            return "Detected";
+                        else
+                            return "Undetected";
+                    }       
+                    else
+                    {
+                        return null;
+                    }
+                }; 
+            }
 
             return column;
         }
