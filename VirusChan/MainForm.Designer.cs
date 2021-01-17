@@ -38,25 +38,25 @@
             this.btn_files = new System.Windows.Forms.Button();
             this.btn_urls = new System.Windows.Forms.Button();
             this.panel_top = new System.Windows.Forms.Panel();
-            this.pb_title = new System.Windows.Forms.PictureBox();
-            this.pb_minimum = new System.Windows.Forms.PictureBox();
-            this.pb_close = new System.Windows.Forms.PictureBox();
             this.lb_title = new System.Windows.Forms.Label();
             this.panel_bottom = new System.Windows.Forms.Panel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.VirusChanMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.FileScanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.UrlScanToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
+            this.CloseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pb_title = new System.Windows.Forms.PictureBox();
+            this.pb_minimum = new System.Windows.Forms.PictureBox();
+            this.pb_close = new System.Windows.Forms.PictureBox();
             this.panel_main.SuspendLayout();
             this.panel_center.SuspendLayout();
             this.flowLayoutPanel.SuspendLayout();
             this.panel_top.SuspendLayout();
+            this.VirusChanMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pb_title)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_minimum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_close)).BeginInit();
-            this.VirusChanMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_main
@@ -155,38 +155,6 @@
             this.panel_top.Size = new System.Drawing.Size(350, 30);
             this.panel_top.TabIndex = 1;
             // 
-            // pb_title
-            // 
-            this.pb_title.Image = global::VirusChan.Properties.Resources.title;
-            this.pb_title.Location = new System.Drawing.Point(6, 6);
-            this.pb_title.Name = "pb_title";
-            this.pb_title.Size = new System.Drawing.Size(20, 20);
-            this.pb_title.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_title.TabIndex = 4;
-            this.pb_title.TabStop = false;
-            // 
-            // pb_minimum
-            // 
-            this.pb_minimum.Image = global::VirusChan.Properties.Resources.minus;
-            this.pb_minimum.Location = new System.Drawing.Point(304, 7);
-            this.pb_minimum.Name = "pb_minimum";
-            this.pb_minimum.Size = new System.Drawing.Size(18, 18);
-            this.pb_minimum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_minimum.TabIndex = 3;
-            this.pb_minimum.TabStop = false;
-            this.pb_minimum.Click += new System.EventHandler(this.pb_minimum_Click);
-            // 
-            // pb_close
-            // 
-            this.pb_close.Image = global::VirusChan.Properties.Resources.cancel;
-            this.pb_close.Location = new System.Drawing.Point(325, 7);
-            this.pb_close.Name = "pb_close";
-            this.pb_close.Size = new System.Drawing.Size(18, 18);
-            this.pb_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pb_close.TabIndex = 2;
-            this.pb_close.TabStop = false;
-            this.pb_close.Click += new System.EventHandler(this.pb_close_Click);
-            // 
             // lb_title
             // 
             this.lb_title.AutoSize = true;
@@ -226,31 +194,63 @@
             this.VirusChanMenuStrip.Name = "contextMenuStrip1";
             this.VirusChanMenuStrip.Size = new System.Drawing.Size(135, 76);
             // 
-            // CloseToolStripMenuItem
-            // 
-            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
-            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.CloseToolStripMenuItem.Text = "닫기";
-            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
-            // 
             // FileScanToolStripMenuItem
             // 
             this.FileScanToolStripMenuItem.Name = "FileScanToolStripMenuItem";
-            this.FileScanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.FileScanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.FileScanToolStripMenuItem.Text = "파일스캔";
             this.FileScanToolStripMenuItem.Click += new System.EventHandler(this.FileScanToolStripMenuItem_Click);
             // 
             // UrlScanToolStripMenuItem
             // 
             this.UrlScanToolStripMenuItem.Name = "UrlScanToolStripMenuItem";
-            this.UrlScanToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UrlScanToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.UrlScanToolStripMenuItem.Text = "사이트스캔";
             this.UrlScanToolStripMenuItem.Click += new System.EventHandler(this.UrlScanToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(131, 6);
+            // 
+            // CloseToolStripMenuItem
+            // 
+            this.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem";
+            this.CloseToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.CloseToolStripMenuItem.Text = "닫기";
+            this.CloseToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
+            // 
+            // pb_title
+            // 
+            this.pb_title.Image = global::VirusChan.Properties.Resources.title;
+            this.pb_title.Location = new System.Drawing.Point(6, 6);
+            this.pb_title.Name = "pb_title";
+            this.pb_title.Size = new System.Drawing.Size(20, 20);
+            this.pb_title.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_title.TabIndex = 4;
+            this.pb_title.TabStop = false;
+            // 
+            // pb_minimum
+            // 
+            this.pb_minimum.Image = global::VirusChan.Properties.Resources.minus;
+            this.pb_minimum.Location = new System.Drawing.Point(304, 7);
+            this.pb_minimum.Name = "pb_minimum";
+            this.pb_minimum.Size = new System.Drawing.Size(18, 18);
+            this.pb_minimum.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_minimum.TabIndex = 3;
+            this.pb_minimum.TabStop = false;
+            this.pb_minimum.Click += new System.EventHandler(this.pb_minimum_Click);
+            // 
+            // pb_close
+            // 
+            this.pb_close.Image = global::VirusChan.Properties.Resources.cancel;
+            this.pb_close.Location = new System.Drawing.Point(325, 7);
+            this.pb_close.Name = "pb_close";
+            this.pb_close.Size = new System.Drawing.Size(18, 18);
+            this.pb_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pb_close.TabIndex = 2;
+            this.pb_close.TabStop = false;
+            this.pb_close.Click += new System.EventHandler(this.pb_close_Click);
             // 
             // MainForm
             // 
@@ -269,10 +269,10 @@
             this.flowLayoutPanel.ResumeLayout(false);
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
+            this.VirusChanMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pb_title)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_minimum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_close)).EndInit();
-            this.VirusChanMenuStrip.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

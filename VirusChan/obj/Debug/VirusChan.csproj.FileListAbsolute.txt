@@ -16,3 +16,8 @@ C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.csproj.CopyComplete
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.exe
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.pdb
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormFileScanDetail.resources
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormDetection.resources
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormSummary.resources
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\System.ValueTuple.dll
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\System.ValueTuple.xml

@@ -37,14 +37,14 @@ namespace VirusChan.Model
             
             style.SetForeColor(Color.FromArgb(63, 130, 242));
             style.SetFont(new Font("Comic Sans MS", 10, FontStyle.Bold));
-
+            
             OLVColumn column = new OLVColumn()
             {
                 Name = name,
                 Text = text,
                 AspectName = aspect,
                 Width = width,
-                HeaderFormatStyle = style                    
+                HeaderFormatStyle = style,                                
             };
 
             return column;
