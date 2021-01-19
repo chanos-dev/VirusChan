@@ -21,24 +21,31 @@ namespace VirusChan.Api
 
         public static ResponseAPI SendRequest(string URL, Method method)
         {
-            ResponseAPI response = new ResponseAPI();
-
-            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(URL);
-            httpWebRequest.Timeout = TimeOut;
-            httpWebRequest.Method = method.ToString();
-
-            if (method == Method.GET)
+            try
             {
-                HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+                ResponseAPI response = new ResponseAPI();
 
-                using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+                HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(URL);
+                httpWebRequest.Timeout = TimeOut;
+                httpWebRequest.Method = method.ToString();
+
+                if (method == Method.GET)
                 {
-                    response.Result = streamReader.ReadToEnd();
-                    response.StatusCode = httpWebResponse.StatusCode;
-                } 
-            } 
+                    HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
 
-            return response;
+                    using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+                    {
+                        response.Result = streamReader.ReadToEnd();
+                        response.StatusCode = httpWebResponse.StatusCode;
+                    }
+                }
+
+                return response;
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }

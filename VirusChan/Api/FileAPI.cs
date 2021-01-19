@@ -25,8 +25,11 @@ namespace VirusChan.Api
 
             string URL = GetFullAPIURL(ApiParams);            
 
-            ResponseAPI responseAPI = RequestAPI.SendRequest(URL, Method.GET);    
-            
+            ResponseAPI responseAPI = RequestAPI.SendRequest(URL, Method.GET);
+
+            if (responseAPI is null)
+                return null;
+
             if (responseAPI.StatusCode == HttpStatusCode.OK)
             {
                 return JsonConvert.DeserializeObject<FileScan>(responseAPI.Result);  

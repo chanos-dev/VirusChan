@@ -65,18 +65,29 @@ namespace VirusChan.form
 
                 foreach (PropertyInfo propertyInfo in propertyInfos)
                 {
-                    dynamic DetectionEngineClass = FileScan.scans.GetType().GetProperty(propertyInfo.Name).GetValue(FileScan.scans, null);
-
-                    if (DetectionEngineClass != null)
-                    {
+                    if (propertyInfo.GetValue(FileScan.scans, null) is IFileScanInfo fileScanInfo)
+                    {                        
                         string engine = propertyInfo.Name;
-                        bool detected = DetectionEngineClass.detected;
-                        string version = DetectionEngineClass.version;
-                        string result = DetectionEngineClass.result;
-                        string update = DetectionEngineClass.update;
+                        bool detected = fileScanInfo.detected;
+                        string version = fileScanInfo.version;
+                        string result = fileScanInfo.result?.ToString();
+                        string update = fileScanInfo.update;
 
-                        detections.Add(Detection.CreateDetection(engine, detected, version, result, update)); 
+                        detections.Add(Detection.CreateDetection(engine, detected, version, result, update));
                     }
+
+                    //dynamic DetectionEngineClass = FileScan.scans.GetType().GetProperty(propertyInfo.Name).GetValue(FileScan.scans, null);
+
+                    //if (DetectionEngineClass != null)
+                    //{
+                    //    string engine = propertyInfo.Name;
+                    //    bool detected = DetectionEngineClass.detected;
+                    //    string version = DetectionEngineClass.version;
+                    //    string result = DetectionEngineClass.result;
+                    //    string update = DetectionEngineClass.update;
+
+                    //    detections.Add(Detection.CreateDetection(engine, detected, version, result, update)); 
+                    //}
                 }
 
                 return detections;
