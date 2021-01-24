@@ -108,16 +108,19 @@ namespace VirusChan.form
         }
 
         private void btn_start_Click(object sender, EventArgs e)
-        {  
+        { 
             if (FileListView.Items.Count < 1)
                 return;
-               
+
+            Program.logger.Info("파일 스캔 시작");
             Task.Factory.StartNew(() =>
             {
                 Parallel.ForEach(FileListView.Objects.Cast<FileFormat>(), fileFormat =>
                 {
                     lock (thislock)
                     {
+                        Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 시작");
+
                         fileFormat.FileState = VirusTotalState.Working;
                         UpdateFileListObject(fileFormat);
 
@@ -126,11 +129,13 @@ namespace VirusChan.form
 
                         if (fileFormat.FileScan is null)
                         {
+                            Program.logger.Error($"{fileFormat.FileFullPath} 파일 스캔 에러");
                             fileFormat.FileState = VirusTotalState.Error;
                             UpdateFileListObject(fileFormat);
                         }
                         else
                         {
+                            Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 완료");
                             fileFormat.FileState = VirusTotalState.Finished;
                             UpdateFileListObject(fileFormat);
                         }

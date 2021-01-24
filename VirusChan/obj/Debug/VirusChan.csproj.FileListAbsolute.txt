@@ -22,3 +22,5 @@ C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormSum
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\System.ValueTuple.dll
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\System.ValueTuple.xml
 C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\obj\Debug\VirusChan.form.FormDetails.resources
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\log4net.dll
+C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\bin\Debug\log4net.xml
