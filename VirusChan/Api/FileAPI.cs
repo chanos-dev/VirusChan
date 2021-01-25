@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -25,19 +26,41 @@ namespace VirusChan.Api
 
             string URL = GetFullAPIURL(ApiParams);            
 
-            ResponseAPI responseAPI = RequestAPI.SendRequest(URL, Method.GET);
+            ResponseAPI responseAPI = RequestAPI.SendRequest(URL, Method.GET).Result;
 
+            return CreateFileScan(responseAPI);
+        } 
+
+        public FileScan FileScan(PostFile file)
+        {
+            this.ApiParams = new string[] { "scan" };
+
+            string URL = GetFullAPIURL();
+
+            Dictionary<string, object> ApiParams = new Dictionary<string, object>()
+            {
+                ["file"] = file,
+                ["apikey"] = ApiKey
+            };
+
+            ResponseAPI responseAPI = RequestAPI.SendRequest(URL, Method.POST, ApiParams).Result;
+
+            return CreateFileScan(responseAPI);
+        }
+
+        private FileScan CreateFileScan(ResponseAPI responseAPI)
+        {
             if (responseAPI is null)
                 return null;
 
             if (responseAPI.StatusCode == HttpStatusCode.OK)
             {
-                return JsonConvert.DeserializeObject<FileScan>(responseAPI.Result);  
+                return JsonConvert.DeserializeObject<FileScan>(responseAPI.Result);
             }
             else
             {
                 return null;
             }
-        } 
+        }
     }
 }

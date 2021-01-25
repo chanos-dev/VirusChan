@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using VirusChan.Model;
 
 namespace VirusChan.Api
 {
@@ -17,35 +18,67 @@ namespace VirusChan.Api
 
     class RequestAPI
     {
-        private static int TimeOut => 3000;
+        private static TimeSpan TimeOut => new TimeSpan(TimeSpan.TicksPerSecond * 3);
 
-        public static ResponseAPI SendRequest(string URL, Method method)
+        public static async Task<ResponseAPI> SendRequest(string URL, Method method, Dictionary<string, object> RequestBodies = null)
         {
             try
             {
-                ResponseAPI response = new ResponseAPI();
-
-                HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(URL);
-                httpWebRequest.Timeout = TimeOut;
-                httpWebRequest.Method = method.ToString();
-
+                ResponseAPI response = new ResponseAPI(); 
+                
                 if (method == Method.GET)
                 {
-                    HttpWebResponse httpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-
-                    using (StreamReader streamReader = new StreamReader(httpWebResponse.GetResponseStream()))
+                    using (HttpClient httpClient = new HttpClient())
                     {
-                        response.Result = streamReader.ReadToEnd();
-                        response.StatusCode = httpWebResponse.StatusCode;
+                        httpClient.Timeout = TimeOut;
+
+                        HttpResponseMessage httpresponse = await httpClient.GetAsync(URL);
+
+                        httpresponse.EnsureSuccessStatusCode();
+                        response.Result = httpresponse.Content.ReadAsStringAsync().Result;
+                        response.StatusCode = httpresponse.StatusCode;
+                    } 
+                }
+                else if (method == Method.POST)
+                {
+                    using (HttpClient httpClient = new HttpClient())
+                    {
+                        httpClient.Timeout = TimeOut;
+
+                        HttpResponseMessage httpresponse = await httpClient.PostAsync(URL, CreateMultiPartBodies(RequestBodies));
+
+                        httpresponse.EnsureSuccessStatusCode();
+                        httpClient.Dispose();
+                        response.Result = httpresponse.Content.ReadAsStringAsync().Result;
+                        response.StatusCode = httpresponse.StatusCode;
                     }
                 }
 
                 return response;
             }
-            catch
+            catch 
             {
                 return null;
             }
+        }
+
+        private static MultipartFormDataContent CreateMultiPartBodies(Dictionary<string, object> RequestBodies)
+        {
+            MultipartFormDataContent multipartForm = new MultipartFormDataContent();
+
+            foreach(var RequestBody in RequestBodies)
+            { 
+                if (RequestBody.Value is string value)
+                { 
+                    multipartForm.Add(new StringContent(value), RequestBody.Key);
+                }
+                else if (RequestBody.Value is PostFile file)
+                { 
+                    multipartForm.Add(new ByteArrayContent(file.FileBytes, 0, file.FileBytes.Length), RequestBody.Key, file.FileName);
+                } 
+            } 
+
+            return multipartForm;
         }
     }
 }

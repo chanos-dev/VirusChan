@@ -125,7 +125,7 @@ namespace VirusChan.form
                         UpdateFileListObject(fileFormat);
 
                         string fileMD5 = VirusTotal.GetMD5(fileFormat.FileFullPath);
-                        fileFormat.FileScan = ApiController.FileReport(fileMD5);
+                        fileFormat.FileScan = ApiController.FileReport(fileMD5); 
 
                         if (fileFormat.FileScan is null)
                         {
@@ -135,6 +135,29 @@ namespace VirusChan.form
                         }
                         else
                         {
+                            if (fileFormat.FileScan.response_code == 0)
+                            {
+                                //파일 스캔
+                                Program.logger.Info($"{fileFormat.FileFullPath} 파일 최초 스캔 필요, 스캔 중");
+                                fileFormat.FileScan = ApiController.FileScan(fileFormat.FileFullPath); 
+                            }
+
+                            if (fileFormat.FileScan.response_code == -2 || fileFormat.FileScan.response_code == 1)
+                            { 
+                                while(true)
+                                {
+                                    Program.logger.Info($"{fileFormat.FileFullPath} 파일 탐색 리스트 큐 추가, 스캔 중"); 
+                                    Thread.Sleep(15000);
+                                    fileFormat.FileScan = ApiController.FileReport(fileMD5);
+
+                                    if (fileFormat.FileScan != null)
+                                    {
+                                        if (fileFormat.FileScan.response_code == 1)
+                                            break;
+                                    }
+                                }
+                            }
+
                             Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 완료");
                             fileFormat.FileState = VirusTotalState.Finished;
                             UpdateFileListObject(fileFormat);

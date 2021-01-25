@@ -118,6 +118,7 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\PostFile.cs" />
     <Compile Include="Model\Detection.cs" />
     <Compile Include="Model\FileFormat.cs" />
     <Compile Include="Model\ListViewData.cs" />
