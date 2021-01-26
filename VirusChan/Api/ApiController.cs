@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VirusChan.Model;
+using VirusChan.Model; 
+using VirusChan.Model.VirusFile;
+using VirusChan.Model.VirusUrl;
 
 namespace VirusChan.Api
 {
@@ -13,6 +15,11 @@ namespace VirusChan.Api
         private FileAPI FileAPI { get; set; } = new FileAPI();
 
         private UrlAPI UrlAPI { get; set; } = new UrlAPI();
+
+        public ApiController(string apiKey)
+        {
+            BaseAPI.ApiKey = apiKey;
+        }
 
         public FileScan FileReport(string resource)
         {
@@ -33,9 +40,9 @@ namespace VirusChan.Api
             }
         } 
 
-        public ApiController(string apiKey)
+        public UrlScan UrlReport(string url)
         {
-            BaseAPI.ApiKey = apiKey;
+            return UrlAPI.UrlReport(url);
         }
     }
 }

@@ -12,6 +12,7 @@ using VirusChan.Model;
 using System.Threading;
 using System.Reflection;
 using VirusChan.Properties;
+using VirusChan.Model.VirusFile;
 
 namespace VirusChan.form
 {

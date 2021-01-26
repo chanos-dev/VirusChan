@@ -84,6 +84,8 @@ namespace VirusChan.form
                 }
 
                 FileListView.SetObjects(lists);
+
+                lb_dragndrop.Visible = false;
             }            
         }
 
@@ -168,15 +170,15 @@ namespace VirusChan.form
         }
 
         private void UpdateFileListObject(FileFormat fileFormat)
-        {
-            if(FileListView.InvokeRequired)
+        { 
+            if (FileListView.InvokeRequired)
             {
                 FileListView.Invoke(new Action(() => UpdateFileListObject(fileFormat)));
             }
             else
-            {
-                FileListView.UpdateObject(fileFormat);
-            }
+            { 
+                FileListView.UpdateObject(fileFormat); 
+            } 
         }
 
         private void FileListView_DoubleClick(object sender, EventArgs e)
@@ -186,7 +188,7 @@ namespace VirusChan.form
 
             if (FileListView.SelectedObject is FileFormat fileFormat)
             { 
-                switch(fileFormat.FileState)
+                switch (fileFormat.FileState)
                 {
                     case VirusTotalState.Finished:
                         using (FormFileScanDetail formFileScanDetail = new FormFileScanDetail(fileFormat.FileScan))
@@ -232,6 +234,7 @@ namespace VirusChan.form
                     }
 
                     FileListView.SetObjects(lists);
+                    lb_dragndrop.Visible = false;
                 }                
             }
         } 

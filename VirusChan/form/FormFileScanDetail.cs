@@ -8,7 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using VirusChan.Model;
+using VirusChan.Model; 
+using VirusChan.Model.VirusFile;
 
 namespace VirusChan.form
 {

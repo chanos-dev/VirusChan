@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.pb_files = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_Urls = new System.Windows.Forms.TextBox();
+            this.btn_start = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pb_files)).BeginInit();
             this.SuspendLayout();
             // 
@@ -43,18 +44,33 @@
             this.pb_files.TabIndex = 1;
             this.pb_files.TabStop = false;
             // 
-            // textBox1
+            // txt_Urls
             // 
-            this.textBox1.Location = new System.Drawing.Point(25, 142);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(305, 24);
-            this.textBox1.TabIndex = 2;
+            this.txt_Urls.Location = new System.Drawing.Point(14, 142);
+            this.txt_Urls.Name = "txt_Urls";
+            this.txt_Urls.Size = new System.Drawing.Size(320, 24);
+            this.txt_Urls.TabIndex = 2;
+            // 
+            // btn_start
+            // 
+            this.btn_start.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.btn_start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_start.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.btn_start.Location = new System.Drawing.Point(14, 313);
+            this.btn_start.Name = "btn_start";
+            this.btn_start.Size = new System.Drawing.Size(320, 27);
+            this.btn_start.TabIndex = 3;
+            this.btn_start.Text = "스캔 시작";
+            this.btn_start.UseVisualStyleBackColor = true;
+            this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
             // 
             // FormUrls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btn_start);
+            this.Controls.Add(this.txt_Urls);
             this.Controls.Add(this.pb_files);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -69,6 +85,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pb_files;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_Urls;
+        private System.Windows.Forms.Button btn_start;
     }
 }

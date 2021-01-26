@@ -7,6 +7,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using VirusChan.Model;
+using VirusChan.Model.VirusFile;
 
 namespace VirusChan.Api
 {

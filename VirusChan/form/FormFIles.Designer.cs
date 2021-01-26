@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_main = new System.Windows.Forms.Panel();
+            this.lb_dragndrop = new System.Windows.Forms.Label();
             this.btn_start = new System.Windows.Forms.Button();
             this.FileListView = new BrightIdeasSoftware.ObjectListView();
             this.pb_files = new System.Windows.Forms.PictureBox();
@@ -40,6 +41,7 @@
             // panel_main
             // 
             this.panel_main.AllowDrop = true;
+            this.panel_main.Controls.Add(this.lb_dragndrop);
             this.panel_main.Controls.Add(this.btn_start);
             this.panel_main.Controls.Add(this.FileListView);
             this.panel_main.Controls.Add(this.pb_files);
@@ -50,6 +52,17 @@
             this.panel_main.TabIndex = 0;
             this.panel_main.DragDrop += new System.Windows.Forms.DragEventHandler(this.panel_main_DragDrop);
             this.panel_main.DragEnter += new System.Windows.Forms.DragEventHandler(this.panel_main_DragEnter);
+            // 
+            // lb_dragndrop
+            // 
+            this.lb_dragndrop.AutoSize = true;
+            this.lb_dragndrop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_dragndrop.ForeColor = System.Drawing.SystemColors.Control;
+            this.lb_dragndrop.Location = new System.Drawing.Point(135, 230);
+            this.lb_dragndrop.Name = "lb_dragndrop";
+            this.lb_dragndrop.Size = new System.Drawing.Size(78, 17);
+            this.lb_dragndrop.TabIndex = 3;
+            this.lb_dragndrop.Text = "Drag && Drop";
             // 
             // btn_start
             // 
@@ -101,6 +114,7 @@
             this.Name = "FormFiles";
             this.Size = new System.Drawing.Size(350, 348);
             this.panel_main.ResumeLayout(false);
+            this.panel_main.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FileListView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pb_files)).EndInit();
             this.ResumeLayout(false);
@@ -113,5 +127,6 @@
         private System.Windows.Forms.PictureBox pb_files;
         private BrightIdeasSoftware.ObjectListView FileListView;
         private System.Windows.Forms.Button btn_start;
+        private System.Windows.Forms.Label lb_dragndrop;
     }
 }

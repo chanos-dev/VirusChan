@@ -123,6 +123,7 @@
     <Compile Include="Model\FileFormat.cs" />
     <Compile Include="Model\ListViewData.cs" />
     <Compile Include="Model\FIleScan.cs" />
+    <Compile Include="Model\UrlScan.cs" />
     <Compile Include="Model\VirusTotal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
