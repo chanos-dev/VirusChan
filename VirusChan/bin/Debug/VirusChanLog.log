@@ -1,69 +1,13 @@
-2021-01-25 23:18:21,327 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-25 23:18:21,339 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 스캔 시작
-2021-01-25 23:18:22,193 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 최초 스캔 필요, 스캔 중
-2021-01-25 23:18:23,612 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:18:29,239 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:18:34,834 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:20:13,644 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-25 23:20:13,672 [4] INFO  VirusChan - C:\Users\Chanos\Documents\chanos.png 파일 스캔 시작
-2021-01-25 23:20:14,535 [4] INFO  VirusChan - C:\Users\Chanos\Documents\chanos.png 파일 최초 스캔 필요, 스캔 중
-2021-01-25 23:20:16,002 [4] INFO  VirusChan - C:\Users\Chanos\Documents\chanos.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:20:21,717 [4] INFO  VirusChan - C:\Users\Chanos\Documents\chanos.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:20:27,328 [4] INFO  VirusChan - C:\Users\Chanos\Documents\chanos.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:21:53,114 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-25 23:21:53,126 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 스캔 시작
-2021-01-25 23:21:53,854 [4] ERROR VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 스캔 에러
-2021-01-25 23:22:08,443 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-25 23:22:08,443 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 스캔 시작
-2021-01-25 23:22:09,094 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 최초 스캔 필요, 스캔 중
-2021-01-25 23:22:10,610 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:22:26,497 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:22:42,255 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:22:57,830 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-25 23:23:13,638 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\TrayIcon.JPG 파일 스캔 완료
-2021-01-26 00:39:27,090 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:39:27,099 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\MessageBox.JPG 파일 스캔 시작
-2021-01-26 00:39:28,115 [4] ERROR VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\MessageBox.JPG 파일 스캔 에러
-2021-01-26 00:39:28,119 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\Lock.JPG 파일 스캔 시작
-2021-01-26 00:39:28,960 [6] ERROR VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\Lock.JPG 파일 스캔 에러
-2021-01-26 00:39:28,967 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\DashBoard.JPG 파일 스캔 시작
-2021-01-26 00:39:29,514 [5] ERROR VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\DashBoard.JPG 파일 스캔 에러
-2021-01-26 00:39:54,201 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:39:54,212 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\Lock.JPG 파일 스캔 시작
-2021-01-26 00:39:55,099 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\Lock.JPG 파일 최초 스캔 필요, 스캔 중
-2021-01-26 00:39:56,588 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\CryptoChan\image\Lock.JPG 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:40:35,301 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:40:35,314 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 시작
-2021-01-26 00:40:35,314 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\checked_green.png 파일 스캔 시작
-2021-01-26 00:40:35,314 [7] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
-2021-01-26 00:40:35,314 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\title.png 파일 스캔 시작
-2021-01-26 00:40:36,225 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\title.png 파일 최초 스캔 필요, 스캔 중
-2021-01-26 00:40:36,266 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\checked_green.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:40:36,266 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:40:36,266 [7] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:40:37,328 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\title.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:41:24,880 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:41:24,894 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\checked_green.png 파일 스캔 시작
-2021-01-26 00:41:24,894 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 시작
-2021-01-26 00:41:24,894 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\files_off.png 파일 스캔 시작
-2021-01-26 00:41:24,894 [7] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
-2021-01-26 00:42:58,856 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:42:58,865 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\checked_green.png 파일 스캔 시작
-2021-01-26 00:42:58,865 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\files_off.png 파일 스캔 시작
-2021-01-26 00:42:58,865 [7] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
-2021-01-26 00:42:58,865 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 시작
-2021-01-26 00:42:59,796 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\files_off.png 파일 최초 스캔 필요, 스캔 중
-2021-01-26 00:42:59,838 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:42:59,838 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\checked_green.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:42:59,955 [7] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:43:01,096 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\files_off.png 파일 탐색 리스트 큐 추가, 스캔 중
-2021-01-26 00:43:21,799 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:43:21,808 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
-2021-01-26 00:43:22,550 [4] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 에러
-2021-01-26 00:43:26,898 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:43:26,898 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
-2021-01-26 00:43:27,398 [5] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 에러
-2021-01-26 00:43:27,951 [1] INFO  VirusChan - 파일 스캔 시작
-2021-01-26 00:43:27,951 [12] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
-2021-01-26 00:43:28,761 [12] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 에러
-2021-01-26 22:34:10,286 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-11 01:27:38,469 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 스캔 시작
+2021-03-11 01:27:38,469 [16] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 시작
+2021-03-11 01:27:38,469 [11] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
+2021-03-11 01:27:39,135 [11] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 에러
+2021-03-11 01:27:39,180 [16] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 에러
+2021-03-11 01:27:39,222 [4] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 스캔 에러
+2021-03-11 01:27:39,758 [1] INFO  VirusChan - 파일 스캔 시작
+2021-03-11 01:27:39,758 [7] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 스캔 시작
+2021-03-11 01:27:39,758 [10] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 시작
+2021-03-11 01:27:39,758 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
+2021-03-11 01:27:40,270 [6] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 에러
+2021-03-11 01:27:40,273 [7] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\urls.png 파일 스캔 에러
+2021-03-11 01:27:40,419 [10] ERROR VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 에러

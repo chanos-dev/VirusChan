@@ -25,7 +25,10 @@ namespace VirusChan.form
 
         private void InitializeContol()
         {
-            
+            lb_md5Result.Text = FileScan.md5 ?? string.Empty;
+            lb_sha1Result.Text = FileScan.sha1 ?? string.Empty;
+            lb_sha256Result.Text = FileScan.sha256 ?? string.Empty;
+            lb_permalinkResult.Text = FileScan.permalink ?? string.Empty;
         }
     }
 }

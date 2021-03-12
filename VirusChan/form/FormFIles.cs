@@ -115,6 +115,7 @@ namespace VirusChan.form
                 return;
 
             Program.logger.Info("파일 스캔 시작");
+            
             Task.Factory.StartNew(() =>
             {
                 Parallel.ForEach(FileListView.Objects.Cast<FileFormat>(), fileFormat =>
@@ -144,12 +145,12 @@ namespace VirusChan.form
                                 fileFormat.FileScan = ApiController.FileScan(fileFormat.FileFullPath); 
                             }
 
-                            if (fileFormat.FileScan.response_code == -2 || fileFormat.FileScan.response_code == 1)
+                            if (fileFormat.FileScan.response_code == -2 || (fileFormat.FileScan.response_code == 1 && fileFormat.FileScan.scans is null))
                             { 
                                 while(true)
                                 {
                                     Program.logger.Info($"{fileFormat.FileFullPath} 파일 탐색 리스트 큐 추가, 스캔 중"); 
-                                    Thread.Sleep(15000);
+                                    Thread.Sleep(10000);
                                     fileFormat.FileScan = ApiController.FileReport(fileMD5);
 
                                     if (fileFormat.FileScan != null)

@@ -30,13 +30,36 @@
         {
             this.panel_top = new System.Windows.Forms.Panel();
             this.lb_title = new System.Windows.Forms.Label();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.pnl_md5 = new System.Windows.Forms.Panel();
+            this.lb_md5 = new System.Windows.Forms.Label();
+            this.pnl_sha1 = new System.Windows.Forms.Panel();
+            this.lb_sha1 = new System.Windows.Forms.Label();
+            this.pnl_sha256 = new System.Windows.Forms.Panel();
+            this.lb_sha256 = new System.Windows.Forms.Label();
+            this.pnl_permalink = new System.Windows.Forms.Panel();
+            this.lb_permalink = new System.Windows.Forms.Label();
+            this.pnl_md5result = new System.Windows.Forms.Panel();
+            this.lb_md5Result = new System.Windows.Forms.Label();
+            this.pnl_sha1result = new System.Windows.Forms.Panel();
+            this.lb_sha1Result = new System.Windows.Forms.Label();
+            this.pnl_sha256result = new System.Windows.Forms.Panel();
+            this.lb_sha256Result = new System.Windows.Forms.Label();
+            this.pnl_permalinkresult = new System.Windows.Forms.Panel();
+            this.lb_permalinkResult = new System.Windows.Forms.Label();
             this.panel_top.SuspendLayout();
+            this.pnl_md5.SuspendLayout();
+            this.pnl_sha1.SuspendLayout();
+            this.pnl_sha256.SuspendLayout();
+            this.pnl_permalink.SuspendLayout();
+            this.pnl_md5result.SuspendLayout();
+            this.pnl_sha1result.SuspendLayout();
+            this.pnl_sha256result.SuspendLayout();
+            this.pnl_permalinkresult.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_top
             // 
-            this.panel_top.BackColor = System.Drawing.SystemColors.Window;
+            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
             this.panel_top.Controls.Add(this.lb_title);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
@@ -48,30 +71,194 @@
             // 
             this.lb_title.AutoSize = true;
             this.lb_title.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.lb_title.Location = new System.Drawing.Point(3, 7);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(116, 19);
             this.lb_title.TabIndex = 0;
             this.lb_title.Text = "Basic Properties";
             // 
-            // tableLayoutPanel
+            // pnl_md5
             // 
-            this.tableLayoutPanel.ColumnCount = 2;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 33);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.RowCount = 1;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(585, 312);
-            this.tableLayoutPanel.TabIndex = 2;
+            this.pnl_md5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.pnl_md5.Controls.Add(this.lb_md5);
+            this.pnl_md5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_md5.Location = new System.Drawing.Point(0, 33);
+            this.pnl_md5.Name = "pnl_md5";
+            this.pnl_md5.Size = new System.Drawing.Size(585, 33);
+            this.pnl_md5.TabIndex = 2;
+            // 
+            // lb_md5
+            // 
+            this.lb_md5.AutoSize = true;
+            this.lb_md5.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_md5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_md5.Location = new System.Drawing.Point(3, 7);
+            this.lb_md5.Name = "lb_md5";
+            this.lb_md5.Size = new System.Drawing.Size(40, 19);
+            this.lb_md5.TabIndex = 0;
+            this.lb_md5.Text = "MD5";
+            // 
+            // pnl_sha1
+            // 
+            this.pnl_sha1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.pnl_sha1.Controls.Add(this.lb_sha1);
+            this.pnl_sha1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_sha1.Location = new System.Drawing.Point(0, 99);
+            this.pnl_sha1.Name = "pnl_sha1";
+            this.pnl_sha1.Size = new System.Drawing.Size(585, 33);
+            this.pnl_sha1.TabIndex = 3;
+            // 
+            // lb_sha1
+            // 
+            this.lb_sha1.AutoSize = true;
+            this.lb_sha1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_sha1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_sha1.Location = new System.Drawing.Point(3, 7);
+            this.lb_sha1.Name = "lb_sha1";
+            this.lb_sha1.Size = new System.Drawing.Size(45, 19);
+            this.lb_sha1.TabIndex = 0;
+            this.lb_sha1.Text = "SHA1";
+            // 
+            // pnl_sha256
+            // 
+            this.pnl_sha256.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.pnl_sha256.Controls.Add(this.lb_sha256);
+            this.pnl_sha256.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_sha256.Location = new System.Drawing.Point(0, 165);
+            this.pnl_sha256.Name = "pnl_sha256";
+            this.pnl_sha256.Size = new System.Drawing.Size(585, 33);
+            this.pnl_sha256.TabIndex = 4;
+            // 
+            // lb_sha256
+            // 
+            this.lb_sha256.AutoSize = true;
+            this.lb_sha256.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_sha256.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_sha256.Location = new System.Drawing.Point(3, 7);
+            this.lb_sha256.Name = "lb_sha256";
+            this.lb_sha256.Size = new System.Drawing.Size(66, 19);
+            this.lb_sha256.TabIndex = 0;
+            this.lb_sha256.Text = "SHA256";
+            // 
+            // pnl_permalink
+            // 
+            this.pnl_permalink.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.pnl_permalink.Controls.Add(this.lb_permalink);
+            this.pnl_permalink.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_permalink.Location = new System.Drawing.Point(0, 231);
+            this.pnl_permalink.Name = "pnl_permalink";
+            this.pnl_permalink.Size = new System.Drawing.Size(585, 33);
+            this.pnl_permalink.TabIndex = 5;
+            // 
+            // lb_permalink
+            // 
+            this.lb_permalink.AutoSize = true;
+            this.lb_permalink.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_permalink.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_permalink.Location = new System.Drawing.Point(3, 7);
+            this.lb_permalink.Name = "lb_permalink";
+            this.lb_permalink.Size = new System.Drawing.Size(91, 19);
+            this.lb_permalink.TabIndex = 0;
+            this.lb_permalink.Text = "PERMALINK";
+            // 
+            // pnl_md5result
+            // 
+            this.pnl_md5result.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_md5result.Controls.Add(this.lb_md5Result);
+            this.pnl_md5result.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_md5result.Location = new System.Drawing.Point(0, 66);
+            this.pnl_md5result.Name = "pnl_md5result";
+            this.pnl_md5result.Size = new System.Drawing.Size(585, 33);
+            this.pnl_md5result.TabIndex = 6;
+            // 
+            // lb_md5Result
+            // 
+            this.lb_md5Result.AutoSize = true;
+            this.lb_md5Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_md5Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_md5Result.Location = new System.Drawing.Point(3, 7);
+            this.lb_md5Result.Name = "lb_md5Result";
+            this.lb_md5Result.Size = new System.Drawing.Size(40, 19);
+            this.lb_md5Result.TabIndex = 0;
+            this.lb_md5Result.Text = "MD5";
+            // 
+            // pnl_sha1result
+            // 
+            this.pnl_sha1result.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_sha1result.Controls.Add(this.lb_sha1Result);
+            this.pnl_sha1result.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_sha1result.Location = new System.Drawing.Point(0, 132);
+            this.pnl_sha1result.Name = "pnl_sha1result";
+            this.pnl_sha1result.Size = new System.Drawing.Size(585, 33);
+            this.pnl_sha1result.TabIndex = 7;
+            // 
+            // lb_sha1Result
+            // 
+            this.lb_sha1Result.AutoSize = true;
+            this.lb_sha1Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_sha1Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_sha1Result.Location = new System.Drawing.Point(3, 7);
+            this.lb_sha1Result.Name = "lb_sha1Result";
+            this.lb_sha1Result.Size = new System.Drawing.Size(40, 19);
+            this.lb_sha1Result.TabIndex = 0;
+            this.lb_sha1Result.Text = "MD5";
+            // 
+            // pnl_sha256result
+            // 
+            this.pnl_sha256result.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_sha256result.Controls.Add(this.lb_sha256Result);
+            this.pnl_sha256result.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnl_sha256result.Location = new System.Drawing.Point(0, 198);
+            this.pnl_sha256result.Name = "pnl_sha256result";
+            this.pnl_sha256result.Size = new System.Drawing.Size(585, 33);
+            this.pnl_sha256result.TabIndex = 8;
+            // 
+            // lb_sha256Result
+            // 
+            this.lb_sha256Result.AutoSize = true;
+            this.lb_sha256Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_sha256Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_sha256Result.Location = new System.Drawing.Point(3, 7);
+            this.lb_sha256Result.Name = "lb_sha256Result";
+            this.lb_sha256Result.Size = new System.Drawing.Size(40, 19);
+            this.lb_sha256Result.TabIndex = 0;
+            this.lb_sha256Result.Text = "MD5";
+            // 
+            // pnl_permalinkresult
+            // 
+            this.pnl_permalinkresult.BackColor = System.Drawing.SystemColors.Control;
+            this.pnl_permalinkresult.Controls.Add(this.lb_permalinkResult);
+            this.pnl_permalinkresult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnl_permalinkresult.Location = new System.Drawing.Point(0, 264);
+            this.pnl_permalinkresult.Name = "pnl_permalinkresult";
+            this.pnl_permalinkresult.Size = new System.Drawing.Size(585, 81);
+            this.pnl_permalinkresult.TabIndex = 9;
+            // 
+            // lb_permalinkResult
+            // 
+            this.lb_permalinkResult.BackColor = System.Drawing.SystemColors.Control;
+            this.lb_permalinkResult.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_permalinkResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_permalinkResult.Location = new System.Drawing.Point(3, 7);
+            this.lb_permalinkResult.Name = "lb_permalinkResult";
+            this.lb_permalinkResult.Size = new System.Drawing.Size(579, 63);
+            this.lb_permalinkResult.TabIndex = 0;
+            this.lb_permalinkResult.Text = "MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5" +
+    "";
             // 
             // FormDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.tableLayoutPanel);
+            this.Controls.Add(this.pnl_permalinkresult);
+            this.Controls.Add(this.pnl_permalink);
+            this.Controls.Add(this.pnl_sha256result);
+            this.Controls.Add(this.pnl_sha256);
+            this.Controls.Add(this.pnl_sha1result);
+            this.Controls.Add(this.pnl_sha1);
+            this.Controls.Add(this.pnl_md5result);
+            this.Controls.Add(this.pnl_md5);
             this.Controls.Add(this.panel_top);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
@@ -80,6 +267,21 @@
             this.Size = new System.Drawing.Size(585, 345);
             this.panel_top.ResumeLayout(false);
             this.panel_top.PerformLayout();
+            this.pnl_md5.ResumeLayout(false);
+            this.pnl_md5.PerformLayout();
+            this.pnl_sha1.ResumeLayout(false);
+            this.pnl_sha1.PerformLayout();
+            this.pnl_sha256.ResumeLayout(false);
+            this.pnl_sha256.PerformLayout();
+            this.pnl_permalink.ResumeLayout(false);
+            this.pnl_permalink.PerformLayout();
+            this.pnl_md5result.ResumeLayout(false);
+            this.pnl_md5result.PerformLayout();
+            this.pnl_sha1result.ResumeLayout(false);
+            this.pnl_sha1result.PerformLayout();
+            this.pnl_sha256result.ResumeLayout(false);
+            this.pnl_sha256result.PerformLayout();
+            this.pnl_permalinkresult.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -87,6 +289,21 @@
         #endregion
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Label lb_title;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.Panel pnl_md5;
+        private System.Windows.Forms.Label lb_md5;
+        private System.Windows.Forms.Panel pnl_sha1;
+        private System.Windows.Forms.Label lb_sha1;
+        private System.Windows.Forms.Panel pnl_sha256;
+        private System.Windows.Forms.Label lb_sha256;
+        private System.Windows.Forms.Panel pnl_permalink;
+        private System.Windows.Forms.Label lb_permalink;
+        private System.Windows.Forms.Panel pnl_md5result;
+        private System.Windows.Forms.Label lb_md5Result;
+        private System.Windows.Forms.Panel pnl_sha1result;
+        private System.Windows.Forms.Label lb_sha1Result;
+        private System.Windows.Forms.Panel pnl_sha256result;
+        private System.Windows.Forms.Label lb_sha256Result;
+        private System.Windows.Forms.Panel pnl_permalinkresult;
+        private System.Windows.Forms.Label lb_permalinkResult;
     }
 }
