@@ -30,5 +30,11 @@ namespace VirusChan.form
             lb_sha256Result.Text = FileScan.sha256 ?? string.Empty;
             lb_permalinkResult.Text = FileScan.permalink ?? string.Empty;
         }
+
+        private void label_DoubleClick(object sender, EventArgs e)
+        {
+            if (sender is Label label) 
+                Clipboard.SetText(label.Text); 
+        }
     }
 }

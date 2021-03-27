@@ -11,20 +11,17 @@ using VirusChan.Model.VirusUrl;
 namespace VirusChan.Api
 {
     public class ApiController
-    {
+    { 
         private FileAPI FileAPI { get; set; } = new FileAPI();
 
         private UrlAPI UrlAPI { get; set; } = new UrlAPI();
 
         public ApiController(string apiKey)
-        {
+        {            
             BaseAPI.ApiKey = apiKey;
         }
 
-        public FileScan FileReport(string resource)
-        {
-            return FileAPI.FileReport(resource);
-        }
+        public FileScan FileReport(string resource) => FileAPI.FileReport(resource); 
 
         public FileScan FileScan(string sourceFilePath)
         {
@@ -40,9 +37,6 @@ namespace VirusChan.Api
             }
         } 
 
-        public UrlScan UrlReport(string url)
-        {
-            return UrlAPI.UrlReport(url);
-        }
+        public UrlScan UrlReport(string url) => UrlAPI.UrlReport(url); 
     }
 }

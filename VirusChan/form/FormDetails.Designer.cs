@@ -59,7 +59,7 @@
             // 
             // panel_top
             // 
-            this.panel_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.panel_top.BackColor = System.Drawing.SystemColors.Control;
             this.panel_top.Controls.Add(this.lb_title);
             this.panel_top.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_top.Location = new System.Drawing.Point(0, 0);
@@ -71,7 +71,7 @@
             // 
             this.lb_title.AutoSize = true;
             this.lb_title.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
             this.lb_title.Location = new System.Drawing.Point(3, 7);
             this.lb_title.Name = "lb_title";
             this.lb_title.Size = new System.Drawing.Size(116, 19);
@@ -182,6 +182,7 @@
             this.lb_md5Result.Size = new System.Drawing.Size(40, 19);
             this.lb_md5Result.TabIndex = 0;
             this.lb_md5Result.Text = "MD5";
+            this.lb_md5Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
             // 
             // pnl_sha1result
             // 
@@ -203,6 +204,7 @@
             this.lb_sha1Result.Size = new System.Drawing.Size(40, 19);
             this.lb_sha1Result.TabIndex = 0;
             this.lb_sha1Result.Text = "MD5";
+            this.lb_sha1Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
             // 
             // pnl_sha256result
             // 
@@ -224,6 +226,7 @@
             this.lb_sha256Result.Size = new System.Drawing.Size(40, 19);
             this.lb_sha256Result.TabIndex = 0;
             this.lb_sha256Result.Text = "MD5";
+            this.lb_sha256Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
             // 
             // pnl_permalinkresult
             // 
@@ -246,6 +249,7 @@
             this.lb_permalinkResult.TabIndex = 0;
             this.lb_permalinkResult.Text = "MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5" +
     "";
+            this.lb_permalinkResult.DoubleClick += new System.EventHandler(this.label_DoubleClick);
             // 
             // FormDetails
             // 

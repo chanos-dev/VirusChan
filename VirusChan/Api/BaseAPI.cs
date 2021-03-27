@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 namespace VirusChan.Api
 {
     public abstract class BaseAPI
-    {
-        //protected string ApiKey => "your virustotal api key";
+    { 
         public static string ApiKey { get; set; }
 
         protected int TimeOut => 3000;
@@ -21,10 +20,7 @@ namespace VirusChan.Api
 
         protected string GetParamsURL(Dictionary<string, string> param) => string.Join("&", param.Select(item => $"{item.Key}={item.Value}"));
 
-        protected string GetFullAPIURL()
-        {
-            return string.Join("/", Enumerable.Concat(new string[] { BaseURL }, this.ApiUrl).Concat(ApiParams));  
-        }
+        protected string GetFullAPIURL() => string.Join("/", Enumerable.Concat(new string[] { BaseURL }, this.ApiUrl).Concat(ApiParams)); 
 
         protected string GetFullAPIURL(Dictionary<string, string> ApiParams)
         {

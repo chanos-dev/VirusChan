@@ -18,9 +18,13 @@ using System.Diagnostics;
 namespace VirusChan.form
 {
     public partial class FormFiles : UserControl
-    {
-        private object thislock = new object();
+    { 
         private ApiController ApiController;
+
+        private const int FixedFileSize = 1024 * 1024 * 32;
+
+        public delegate void ShowBallonTip(string title, string contents);
+        public event ShowBallonTip ShowBallonTipHandler;
 
         public FormFiles(ApiController ApiController)
         {
@@ -91,22 +95,16 @@ namespace VirusChan.form
 
         private void FileListView_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
-            if (e.IsSelected)
-            {
-                e.Item.BackColor = Color.FromArgb(0, 120, 215);
-            }
-            else
-            {
-                e.Item.BackColor = Color.FromArgb(63, 130, 242);
-            }
+            if (e.IsSelected) 
+                e.Item.BackColor = Color.FromArgb(0, 120, 215); 
+            else 
+                e.Item.BackColor = Color.FromArgb(63, 130, 242); 
         }
 
         private void FileListView_FormatRow(object sender, FormatRowEventArgs e)
         {
-            if (e.Item.RowObject is FileFormat fileFormat)
-            {
-                e.Item.ForeColor = Color.FromArgb(230, 245, 255);                
-            }
+            if (e.Item.RowObject is FileFormat fileFormat) 
+                e.Item.ForeColor = Color.FromArgb(230, 245, 255);
         }
 
         private void btn_start_Click(object sender, EventArgs e)
@@ -117,55 +115,56 @@ namespace VirusChan.form
             Program.logger.Info("파일 스캔 시작");
             
             Task.Factory.StartNew(() =>
-            {
+            {  
                 Parallel.ForEach(FileListView.Objects.Cast<FileFormat>(), fileFormat =>
-                {
-                    lock (thislock)
+                { 
+                    Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 시작");
+
+                    fileFormat.FileState = VirusTotalState.Working;
+                    FileListView.UpdateObject(fileFormat);
+
+                    string fileMD5 = VirusTotal.GetMD5(fileFormat.FileFullPath);
+                    fileFormat.FileScan = ApiController.FileReport(fileMD5);
+
+                    if (fileFormat.FileScan is null)
                     {
-                        Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 시작");
-
-                        fileFormat.FileState = VirusTotalState.Working;
-                        UpdateFileListObject(fileFormat);
-
-                        string fileMD5 = VirusTotal.GetMD5(fileFormat.FileFullPath);
-                        fileFormat.FileScan = ApiController.FileReport(fileMD5); 
-
-                        if (fileFormat.FileScan is null)
+                        Program.logger.Error($"{fileFormat.FileFullPath} 파일 스캔 에러");
+                        fileFormat.FileState = VirusTotalState.Error;
+                        FileListView.UpdateObject(fileFormat);
+                    }
+                    else
+                    {
+                        if (fileFormat.FileScan.response_code == 0)
                         {
-                            Program.logger.Error($"{fileFormat.FileFullPath} 파일 스캔 에러");
-                            fileFormat.FileState = VirusTotalState.Error;
-                            UpdateFileListObject(fileFormat);
+                            //파일 스캔
+                            Program.logger.Info($"{fileFormat.FileFullPath} 파일 최초 스캔 필요, 스캔 중");
+                            fileFormat.FileScan = ApiController.FileScan(fileFormat.FileFullPath);
                         }
-                        else
+
+                        if (fileFormat.FileScan.response_code == -2 || (fileFormat.FileScan.response_code == 1 && fileFormat.FileScan.scans is null))
                         {
-                            if (fileFormat.FileScan.response_code == 0)
+                            Program.logger.Info($"{fileFormat.FileFullPath} 파일 탐색 리스트 큐 추가, 스캔 중");
+                            while (true)
                             {
-                                //파일 스캔
-                                Program.logger.Info($"{fileFormat.FileFullPath} 파일 최초 스캔 필요, 스캔 중");
-                                fileFormat.FileScan = ApiController.FileScan(fileFormat.FileFullPath); 
-                            }
+                                Thread.Sleep(10000);
+                                fileFormat.FileScan = ApiController.FileReport(fileMD5);
 
-                            if (fileFormat.FileScan.response_code == -2 || (fileFormat.FileScan.response_code == 1 && fileFormat.FileScan.scans is null))
-                            { 
-                                while(true)
+                                if (fileFormat.FileScan != null)
                                 {
-                                    Program.logger.Info($"{fileFormat.FileFullPath} 파일 탐색 리스트 큐 추가, 스캔 중"); 
-                                    Thread.Sleep(10000);
-                                    fileFormat.FileScan = ApiController.FileReport(fileMD5);
-
-                                    if (fileFormat.FileScan != null)
+                                    if (fileFormat.FileScan.response_code == 1)
                                     {
-                                        if (fileFormat.FileScan.response_code == 1)
-                                            break;
+                                        ShowBallonTipHandler?.Invoke("스캔 완료", $"{fileFormat.FileName} : 스캔 완료");
+                                        break;
                                     }
                                 }
+                                Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 중");
                             }
-
-                            Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 완료");
-                            fileFormat.FileState = VirusTotalState.Finished;
-                            UpdateFileListObject(fileFormat);
                         }
-                    }
+
+                        Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 완료");
+                        fileFormat.FileState = VirusTotalState.Finished;
+                        FileListView.UpdateObject(fileFormat);
+                    } 
                 });
             });          
         }
@@ -220,6 +219,13 @@ namespace VirusChan.form
                 
                 string[] files = fileDialog.FileNames;
 
+                // virustotal api call limit.
+                if (files.Count() > 4)
+                {
+                    MessageBox.Show("최대 4개 파일만 가능합니다.");
+                    return;
+                }
+
                 if (files.Count() > 0)
                 {
                     List<FileFormat> lists = new List<FileFormat>();
@@ -228,9 +234,12 @@ namespace VirusChan.form
                     {
                         FileFormat file = new FileFormat();
                         file.FileName = Path.GetFileName(files[i]);
-                        file.FileSize = File.OpenRead(files[i]).Length;
+                        file.FileSize = File.OpenRead(files[i]).Length;                        
                         file.FileFullPath = files[i];
-                        file.FileState = VirusTotalState.Ready;
+                        if (FixedFileSize > file.FileSize)
+                            file.FileState = VirusTotalState.Ready;
+                        else
+                            file.FileState = VirusTotalState.Error;
                         lists.Add(file);
                     }
 

@@ -42,6 +42,8 @@ namespace VirusChan
             ApiController = new ApiController("your virustotal api key");
 
             formFile = new FormFiles(ApiController);
+            formFile.ShowBallonTipHandler += (t, c) => notifyIcon.ShowBalloonTip(1000, t, c, ToolTipIcon.None);
+
             formUrls = new FormUrls(ApiController);
 
             this.Controls.Add(formFile);
@@ -51,7 +53,7 @@ namespace VirusChan
             formUrls.Parent = this.panel_forms;
 
             //default
-            ShowSelectedForm(FormType.FormFile);            
+            ShowSelectedForm(FormType.FormFile);                        
         } 
 
         private void MainForm_Load(object sender, EventArgs e)
@@ -72,20 +74,11 @@ namespace VirusChan
             this.Show();
         } 
 
-        private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
+        private void CloseToolStripMenuItem_Click(object sender, EventArgs e) => this.Close(); 
 
-        private void pb_close_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
+        private void pb_close_Click(object sender, EventArgs e) => this.Hide(); 
 
-        private void pb_minimum_Click(object sender, EventArgs e)
-        {            
-            this.WindowState = FormWindowState.Minimized;
-        }
+        private void pb_minimum_Click(object sender, EventArgs e) => this.WindowState = FormWindowState.Minimized;
 
         private void MoveSelectedPanel(ButtonType type)
         {
