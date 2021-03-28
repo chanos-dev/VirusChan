@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VirusChan.Model; 
 using VirusChan.Model.VirusFile;
+using System.Diagnostics;
 
 namespace VirusChan.form
 {
@@ -28,13 +29,19 @@ namespace VirusChan.form
             lb_md5Result.Text = FileScan.md5 ?? string.Empty;
             lb_sha1Result.Text = FileScan.sha1 ?? string.Empty;
             lb_sha256Result.Text = FileScan.sha256 ?? string.Empty;
-            lb_permalinkResult.Text = FileScan.permalink ?? string.Empty;
+            llb_permalinkResult.Text = FileScan.permalink ?? string.Empty;
         }
 
         private void label_DoubleClick(object sender, EventArgs e)
         {
             if (sender is Label label) 
                 Clipboard.SetText(label.Text); 
+        }
+
+        private void llb_permalinkResult_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            llb_permalinkResult.LinkVisited = true; 
+            Process.Start(llb_permalinkResult.Text);
         }
     }
 }

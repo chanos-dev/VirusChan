@@ -7,7 +7,7 @@ using VirusChan.Model.VirusFile;
 
 namespace VirusChan.Model
 {
-    class FileFormat
+    public class FileFormat
     {
         public string FileName { get; set; }
         public long FileSize { get; set; } 

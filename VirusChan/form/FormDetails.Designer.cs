@@ -45,7 +45,7 @@
             this.pnl_sha256result = new System.Windows.Forms.Panel();
             this.lb_sha256Result = new System.Windows.Forms.Label();
             this.pnl_permalinkresult = new System.Windows.Forms.Panel();
-            this.lb_permalinkResult = new System.Windows.Forms.Label();
+            this.llb_permalinkResult = new System.Windows.Forms.LinkLabel();
             this.panel_top.SuspendLayout();
             this.pnl_md5.SuspendLayout();
             this.pnl_sha1.SuspendLayout();
@@ -231,25 +231,23 @@
             // pnl_permalinkresult
             // 
             this.pnl_permalinkresult.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_permalinkresult.Controls.Add(this.lb_permalinkResult);
+            this.pnl_permalinkresult.Controls.Add(this.llb_permalinkResult);
             this.pnl_permalinkresult.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnl_permalinkresult.Location = new System.Drawing.Point(0, 264);
             this.pnl_permalinkresult.Name = "pnl_permalinkresult";
             this.pnl_permalinkresult.Size = new System.Drawing.Size(585, 81);
             this.pnl_permalinkresult.TabIndex = 9;
             // 
-            // lb_permalinkResult
+            // llb_permalinkResult
             // 
-            this.lb_permalinkResult.BackColor = System.Drawing.SystemColors.Control;
-            this.lb_permalinkResult.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_permalinkResult.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.lb_permalinkResult.Location = new System.Drawing.Point(3, 7);
-            this.lb_permalinkResult.Name = "lb_permalinkResult";
-            this.lb_permalinkResult.Size = new System.Drawing.Size(579, 63);
-            this.lb_permalinkResult.TabIndex = 0;
-            this.lb_permalinkResult.Text = "MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5MD5" +
-    "";
-            this.lb_permalinkResult.DoubleClick += new System.EventHandler(this.label_DoubleClick);
+            this.llb_permalinkResult.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.llb_permalinkResult.Location = new System.Drawing.Point(3, 3);
+            this.llb_permalinkResult.Name = "llb_permalinkResult";
+            this.llb_permalinkResult.Size = new System.Drawing.Size(579, 63);
+            this.llb_permalinkResult.TabIndex = 1;
+            this.llb_permalinkResult.TabStop = true;
+            this.llb_permalinkResult.Text = "linkLabel1";
+            this.llb_permalinkResult.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llb_permalinkResult_LinkClicked);
             // 
             // FormDetails
             // 
@@ -308,6 +306,6 @@
         private System.Windows.Forms.Panel pnl_sha256result;
         private System.Windows.Forms.Label lb_sha256Result;
         private System.Windows.Forms.Panel pnl_permalinkresult;
-        private System.Windows.Forms.Label lb_permalinkResult;
+        private System.Windows.Forms.LinkLabel llb_permalinkResult;
     }
 }
