@@ -30,24 +30,24 @@ namespace VirusChan.form
     public partial class FormFileScanDetail : Form
     {
         private Point mousePoint { get; set; }
-        private FileScan FileScan { get; set; } = null;
+        private FileFormat FileFormat { get; set; }
 
-        private FormSummary FormSummary { get; set; } = null;
-        private FormDetection FormDetection { get; set; } = null;
-        private FormDetails FormDetails { get; set; } = null;
+        private FormSummary FormSummary { get; set; }
+        private FormDetection FormDetection { get; set; }
+        private FormDetails FormDetails { get; set; }
 
-        public FormFileScanDetail(FileScan fileScan)
+        public FormFileScanDetail(FileFormat fileFormat)
         {
             InitializeComponent();            
-            this.FileScan = fileScan;
+            this.FileFormat = fileFormat;
             InitializeControl();
         }
 
         private void InitializeControl()
         {
-            FormSummary = new FormSummary(FileScan);
-            FormDetection = new FormDetection(FileScan);
-            FormDetails = new FormDetails(FileScan);
+            FormSummary = new FormSummary(FileFormat);
+            FormDetection = new FormDetection(FileFormat.FileScan);
+            FormDetails = new FormDetails(FileFormat.FileScan);
 
             this.Controls.Add(FormSummary);
             this.Controls.Add(FormDetection);

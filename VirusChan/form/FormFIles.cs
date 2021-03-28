@@ -17,6 +17,7 @@ using System.Diagnostics;
 
 namespace VirusChan.form
 {
+    // test virus file md5 : 6a26cc095f9132549ae21ea4065899f6
     public partial class FormFiles : UserControl
     { 
         private ApiController ApiController;
@@ -191,7 +192,7 @@ namespace VirusChan.form
                 switch (fileFormat.FileState)
                 {
                     case VirusTotalState.Finished:
-                        using (FormFileScanDetail formFileScanDetail = new FormFileScanDetail(fileFormat.FileScan))
+                        using (FormFileScanDetail formFileScanDetail = new FormFileScanDetail(fileFormat))
                         {
                             formFileScanDetail.ShowDialog();
                         }
