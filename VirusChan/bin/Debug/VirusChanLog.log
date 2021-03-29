@@ -61,3 +61,24 @@
 2021-03-28 22:25:20,818 [7] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 완료
 2021-03-28 22:25:20,818 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\process.gif 파일 스캔 완료
 2021-03-28 22:25:20,818 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\minus.png 파일 스캔 완료
+2021-03-30 00:38:10,004 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:06:34,398 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:06:35,470 [4] INFO  VirusChan - https://www.naver.com URL 스캔 시작
+2021-03-30 01:08:30,579 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:08:31,698 [4] INFO  VirusChan - https://www.naver.com URL 스캔 시작
+2021-03-30 01:08:36,461 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:08:36,985 [4] INFO  VirusChan - https://www.naver.com1 URL 스캔 시작
+2021-03-30 01:08:57,725 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:08:59,061 [4] INFO  VirusChan - https://www.naver.com URL 스캔 시작
+2021-03-30 01:13:03,012 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:13:04,239 [4] INFO  VirusChan - https://www.naver.com URL 스캔 시작
+2021-03-30 01:13:08,001 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:13:08,906 [4] INFO  VirusChan - https://www.naver.com1 URL 스캔 시작
+2021-03-30 01:13:42,593 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:13:43,252 [11] INFO  VirusChan - https://www.naver.com URL 스캔 시작
+2021-03-30 01:32:57,668 [1] INFO  VirusChan - 파일 스캔 시작
+2021-03-30 01:32:57,682 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\files.png 파일 스캔 시작
+2021-03-30 01:32:58,961 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\files.png 파일 스캔 완료
+2021-03-30 01:33:13,315 [1] INFO  VirusChan - URL 스캔 시작
+2021-03-30 01:33:14,084 [6] INFO  VirusChan - https://www.naver.com URL 스캔 시작
+2021-03-30 01:33:14,086 [6] INFO  VirusChan - https://www.naver.com URL 스캔 완료
