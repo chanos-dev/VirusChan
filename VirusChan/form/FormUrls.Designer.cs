@@ -31,6 +31,9 @@
             this.pb_files = new System.Windows.Forms.PictureBox();
             this.txt_Urls = new System.Windows.Forms.TextBox();
             this.btn_start = new System.Windows.Forms.Button();
+            this.lb_msg = new System.Windows.Forms.Label();
+            this.btn_detail = new System.Windows.Forms.Button();
+            this.lb_scanDate = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pb_files)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,10 +68,50 @@
             this.btn_start.UseVisualStyleBackColor = true;
             this.btn_start.Click += new System.EventHandler(this.btn_start_Click);
             // 
+            // lb_msg
+            // 
+            this.lb_msg.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_msg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_msg.Location = new System.Drawing.Point(14, 173);
+            this.lb_msg.Name = "lb_msg";
+            this.lb_msg.Size = new System.Drawing.Size(320, 47);
+            this.lb_msg.TabIndex = 4;
+            this.lb_msg.Text = "Scan Result";
+            this.lb_msg.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btn_detail
+            // 
+            this.btn_detail.Enabled = false;
+            this.btn_detail.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.btn_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_detail.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
+            this.btn_detail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.btn_detail.Location = new System.Drawing.Point(124, 273);
+            this.btn_detail.Name = "btn_detail";
+            this.btn_detail.Size = new System.Drawing.Size(100, 27);
+            this.btn_detail.TabIndex = 5;
+            this.btn_detail.Text = "자세히 보기";
+            this.btn_detail.UseVisualStyleBackColor = true;
+            this.btn_detail.Click += new System.EventHandler(this.btn_detail_Click);
+            // 
+            // lb_scanDate
+            // 
+            this.lb_scanDate.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_scanDate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_scanDate.Location = new System.Drawing.Point(14, 232);
+            this.lb_scanDate.Name = "lb_scanDate";
+            this.lb_scanDate.Size = new System.Drawing.Size(320, 29);
+            this.lb_scanDate.TabIndex = 6;
+            this.lb_scanDate.Text = "Scan Date";
+            this.lb_scanDate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormUrls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lb_scanDate);
+            this.Controls.Add(this.btn_detail);
+            this.Controls.Add(this.lb_msg);
             this.Controls.Add(this.btn_start);
             this.Controls.Add(this.txt_Urls);
             this.Controls.Add(this.pb_files);
@@ -87,5 +130,8 @@
         private System.Windows.Forms.PictureBox pb_files;
         private System.Windows.Forms.TextBox txt_Urls;
         private System.Windows.Forms.Button btn_start;
+        private System.Windows.Forms.Label lb_msg;
+        private System.Windows.Forms.Button btn_detail;
+        private System.Windows.Forms.Label lb_scanDate;
     }
 }
