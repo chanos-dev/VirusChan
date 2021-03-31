@@ -17,62 +17,62 @@
 #### FileScan_Summary
 - 파일 스캔 요약
 
-![FileScan_Summary](image/filescan_summary.JPG)
+![FileScan_Summary](image/filescan_summary.jpg)
 
 ---
 
 #### FileScan_Detection
 - 파일 스캔 탐지
 
-![FileScan_Detection](image/filescan_detection.JPG)
+![FileScan_Detection](image/filescan_detection.jpg)
 
 ---
 
 #### FileScan_Details
 - 파일 스캔 상세정보
 
-![FileScan_Details](image/filescan_details.JPG)
+![FileScan_Details](image/filescan_details.jpg)
 
 ---
 
 #### SiteScan
 - 사이트 스캔
 
-![SiteScan](image/sitescan.JPG)
+![SiteScan](image/sitescan.jpg)
 
 ---
 
 #### SiteScan_Summary
 - 사이트 스캔 요약
 
-![SiteScan_Summary](image/sitescan_summary.JPG)
+![SiteScan_Summary](image/sitescan_summary.jpg)
 
 ---
 
 #### SiteScan_Detection
 - 사이트 스캔 탐지
 
-![SiteScan_Detection](image/sitescan_detection.JPG)
+![SiteScan_Detection](image/sitescan_detection.jpg)
 
 ---
 
 #### SiteScan Details
 - 사이트 스캔 상세정보
 
-![SiteScan_Details](image/sitescan_details.JPG)
+![SiteScan_Details](image/sitescan_details.jpg)
 
 ---
 
 #### ScanBalloon
 - 스캔 메시지
 
-![ScanBalloon](image/scanballoon.JPG)
+![ScanBalloon](image/scanballoon.jpg)
 
 ---
 
 #### Log
 - 스캔 Log
 
-![Log](image/log.JPG)
+![Log](image/log.jpg)
 
 ---
