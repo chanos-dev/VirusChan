@@ -28,7 +28,7 @@ namespace VirusChan.form
         Details
     }
 
-    public partial class FormFileScanDetail : Form
+    public partial class FormScanDetail : Form
     {
         private Point mousePoint { get; set; }
         private IFormat ScanFormat { get; set; }   
@@ -37,10 +37,17 @@ namespace VirusChan.form
         private FormDetection FormDetection { get; set; }
         private FormDetails FormDetails { get; set; }
 
-        public FormFileScanDetail(IFormat format)
-        {
-            InitializeComponent(); 
-            ScanFormat = format;  
+        public FormScanDetail(IFormat format)
+        {           
+            InitializeComponent();             
+
+            ScanFormat = format;
+
+            if (ScanFormat is FileFormat)
+                lb_title.Text = "파일 스캔 정보";
+            else
+                lb_title.Text = "사이트 스캔 정보";
+
             InitializeControl();
         }
 

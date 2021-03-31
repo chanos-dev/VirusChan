@@ -82,11 +82,11 @@
     <Compile Include="form\FormDetails.Designer.cs">
       <DependentUpon>FormDetails.cs</DependentUpon>
     </Compile>
-    <Compile Include="form\FormFileScanDetail.cs">
+    <Compile Include="form\FormScanDetail.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="form\FormFileScanDetail.Designer.cs">
-      <DependentUpon>FormFileScanDetail.cs</DependentUpon>
+    <Compile Include="form\FormScanDetail.Designer.cs">
+      <DependentUpon>FormScanDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="form\FormFiles.cs">
       <SubType>UserControl</SubType>
@@ -139,8 +139,8 @@
     <EmbeddedResource Include="form\FormFiles.resx">
       <DependentUpon>FormFiles.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="form\FormFileScanDetail.resx">
-      <DependentUpon>FormFileScanDetail.cs</DependentUpon>
+    <EmbeddedResource Include="form\FormScanDetail.resx">
+      <DependentUpon>FormScanDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="form\FormUrls.resx">
       <DependentUpon>FormUrls.cs</DependentUpon>

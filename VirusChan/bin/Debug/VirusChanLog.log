@@ -1,10 +1,10 @@
-2021-03-31 22:14:47,766 [4] INFO  VirusChan - www.naver.com URL 스캔 완료
-2021-03-31 22:15:48,544 [1] INFO  VirusChan - URL 스캔 시작
-2021-03-31 22:15:49,485 [12] INFO  VirusChan - www.naver.com123123213 URL 스캔 시작
-2021-03-31 22:15:49,498 [12] INFO  VirusChan - www.naver.com123123213 URL 스캔 완료
-2021-03-31 22:15:58,758 [1] INFO  VirusChan - URL 스캔 시작
-2021-03-31 22:15:59,594 [12] INFO  VirusChan - www.daum.net URL 스캔 시작
-2021-03-31 22:15:59,610 [12] INFO  VirusChan - www.daum.net URL 스캔 완료
-2021-03-31 22:16:55,647 [1] INFO  VirusChan - 파일 스캔 시작
-2021-03-31 22:16:55,649 [13] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
-2021-03-31 22:16:56,481 [13] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 완료
+2021-04-01 01:37:04,976 [1] INFO  VirusChan - 파일 스캔 시작
+2021-04-01 01:37:04,998 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\title.png 파일 스캔 시작
+2021-04-01 01:37:04,998 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 시작
+2021-04-01 01:37:04,998 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 시작
+2021-04-01 01:37:06,018 [6] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.png 파일 스캔 완료
+2021-04-01 01:37:06,018 [4] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\title.png 파일 스캔 완료
+2021-04-01 01:37:06,039 [5] INFO  VirusChan - C:\Users\Chanos\Desktop\git\VirusChan\VirusChan\image\VirusChan.ico 파일 스캔 완료
+2021-04-01 01:37:14,235 [1] INFO  VirusChan - URL 스캔 시작
+2021-04-01 01:37:14,875 [9] INFO  VirusChan - google.com URL 스캔 시작
+2021-04-01 01:37:14,878 [9] INFO  VirusChan - google.com URL 스캔 완료

@@ -1,6 +1,6 @@
 ﻿namespace VirusChan.form
 {
-    partial class FormFileScanDetail
+    partial class FormScanDetail
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFileScanDetail));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormScanDetail));
             this.panel_top = new System.Windows.Forms.Panel();
             this.lb_title = new System.Windows.Forms.Label();
             this.panel_bottom = new System.Windows.Forms.Panel();

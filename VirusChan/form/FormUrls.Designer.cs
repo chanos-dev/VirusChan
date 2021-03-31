@@ -62,7 +62,7 @@
             this.btn_start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
             this.btn_start.Location = new System.Drawing.Point(14, 313);
             this.btn_start.Name = "btn_start";
-            this.btn_start.Size = new System.Drawing.Size(320, 27);
+            this.btn_start.Size = new System.Drawing.Size(158, 27);
             this.btn_start.TabIndex = 3;
             this.btn_start.Text = "스캔 시작";
             this.btn_start.UseVisualStyleBackColor = true;
@@ -86,9 +86,9 @@
             this.btn_detail.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_detail.Font = new System.Drawing.Font("Comic Sans MS", 10F, System.Drawing.FontStyle.Bold);
             this.btn_detail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.btn_detail.Location = new System.Drawing.Point(124, 273);
+            this.btn_detail.Location = new System.Drawing.Point(176, 313);
             this.btn_detail.Name = "btn_detail";
-            this.btn_detail.Size = new System.Drawing.Size(100, 27);
+            this.btn_detail.Size = new System.Drawing.Size(158, 27);
             this.btn_detail.TabIndex = 5;
             this.btn_detail.Text = "자세히 보기";
             this.btn_detail.UseVisualStyleBackColor = true;
