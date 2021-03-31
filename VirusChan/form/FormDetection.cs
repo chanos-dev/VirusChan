@@ -13,27 +13,38 @@ using System.Threading;
 using System.Reflection;
 using VirusChan.Properties;
 using VirusChan.Model.VirusFile;
+using VirusChan.Interface;
+using VirusChan.Model.VirusUrl;
 
 namespace VirusChan.form
 {
     public partial class FormDetection : UserControl
     {
-        private FileScan FileScan { get; set; } = null;
-        public FormDetection(FileScan fileScan)
+        private IScan Scan { get; set; }
+
+        public FormDetection(IScan scan)
         {
             InitializeComponent();
-            this.FileScan = fileScan;
-            InitializeControl();   
-            SettingDetectionList();
-        } 
+            Scan = scan;
+            InitializeDetectionListView(); 
 
-        private void InitializeControl()
+            switch(scan)
+            {
+                case FileScan fileScan:
+                    InitializeFileScanList();
+                    SettingDetectionList(fileScan);
+                    break;
+                case UrlScan urlScan:
+                    InitializeUrlScanList();
+                    SettingDetectionList(urlScan);
+                    break;
+            }
+        }
+
+        private void InitializeFileScanList()
         {
-            DetectionListView.FullRowSelect = true;
-            DetectionListView.ShowGroups = false;
-            DetectionListView.HeaderUsesThemes = false;
-            DetectionListView.HideSelection = true;
-            DetectionListView.UseCellFormatEvents = true;
+            DetectionListView.AllColumns.Clear();
+            DetectionListView.Columns.Clear();
 
             OLVColumn[] columns = new[]
             {
@@ -42,7 +53,7 @@ namespace VirusChan.form
                 ListViewData.CreateColumn("DetectionVersion", "엔진버전", "DetectionVersion", 100),
                 ListViewData.CreateColumn("DetectionResult", "결과", "DetectionResult", 150),
             };
-             
+
             ColumnHeader[] headers = new ColumnHeader[columns.Length];
 
             for (int idx = 0; idx < columns.Length; idx++)
@@ -54,7 +65,39 @@ namespace VirusChan.form
             DetectionListView.Columns.AddRange(headers);
         }
 
-        private void SettingDetectionList()
+        private void InitializeUrlScanList()
+        {
+            DetectionListView.AllColumns.Clear();
+            DetectionListView.Columns.Clear();
+
+            OLVColumn[] columns = new[]
+            {
+                ListViewData.CreateColumn("DetectionEngine", "탐지엔진", "DetectionEngine", 165),
+                ListViewData.CreateColumn("Detected", "탐지", "Detected", 105), //150 
+                ListViewData.CreateColumn("DetectionResult", "결과", "DetectionResult", 150),
+            };
+
+            ColumnHeader[] headers = new ColumnHeader[columns.Length];
+
+            for (int idx = 0; idx < columns.Length; idx++)
+            {
+                headers[idx] = columns[idx];
+                DetectionListView.AllColumns.Add(columns[idx]);
+            }
+
+            DetectionListView.Columns.AddRange(headers);
+        }
+
+        private void InitializeDetectionListView()
+        {
+            DetectionListView.FullRowSelect = true;
+            DetectionListView.ShowGroups = false;
+            DetectionListView.HeaderUsesThemes = false;
+            DetectionListView.HideSelection = true;
+            DetectionListView.UseCellFormatEvents = true; 
+        }
+
+        private void SettingDetectionList(FileScan fileScan)
         {
             Task<List<Detection>>.Factory.StartNew(() =>
             {
@@ -62,11 +105,11 @@ namespace VirusChan.form
 
                 List<Detection> detections = new List<Detection>();
 
-                PropertyInfo[] propertyInfos = FileScan.scans.GetType().GetProperties();
+                PropertyInfo[] propertyInfos = fileScan.scans.GetType().GetProperties();
 
                 foreach (PropertyInfo propertyInfo in propertyInfos)
                 {
-                    if (propertyInfo.GetValue(FileScan.scans, null) is IFileScanInfo fileScanInfo)
+                    if (propertyInfo.GetValue(fileScan.scans, null) is IFileScanInfo fileScanInfo)
                     {                        
                         string engine = propertyInfo.Name;
                         bool detected = fileScanInfo.detected;
@@ -94,6 +137,36 @@ namespace VirusChan.form
                 return detections;
             }).ContinueWith(e =>
             {                
+                DetectionListView.SetObjects(e.Result);
+                ShowProcess(false);
+            });
+        }
+
+        private void SettingDetectionList(UrlScan urlScan)
+        {
+            Task<List<Detection>>.Factory.StartNew(() =>
+            {
+                ShowProcess(true);
+
+                List<Detection> detections = new List<Detection>();
+
+                PropertyInfo[] propertyInfos = urlScan.scans.GetType().GetProperties();
+
+                foreach (PropertyInfo propertyInfo in propertyInfos)
+                {
+                    if (propertyInfo.GetValue(urlScan.scans, null) is IUrlScanInfo fileScanInfo)
+                    {
+                        string engine = propertyInfo.Name;
+                        bool detected = fileScanInfo.detected; 
+                        string result = fileScanInfo.result?.ToString(); 
+
+                        detections.Add(Detection.CreateDetection(engine, detected, string.Empty, result, string.Empty));
+                    } 
+                }
+
+                return detections;
+            }).ContinueWith(e =>
+            {
                 DetectionListView.SetObjects(e.Result);
                 ShowProcess(false);
             });

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VirusChan.Interface;
 using VirusChan.Model; 
 using VirusChan.Model.VirusFile;
 
@@ -30,24 +31,24 @@ namespace VirusChan.form
     public partial class FormFileScanDetail : Form
     {
         private Point mousePoint { get; set; }
-        private FileFormat FileFormat { get; set; }
+        private IFormat ScanFormat { get; set; }   
 
         private FormSummary FormSummary { get; set; }
         private FormDetection FormDetection { get; set; }
         private FormDetails FormDetails { get; set; }
 
-        public FormFileScanDetail(FileFormat fileFormat)
+        public FormFileScanDetail(IFormat format)
         {
-            InitializeComponent();            
-            this.FileFormat = fileFormat;
+            InitializeComponent(); 
+            ScanFormat = format;  
             InitializeControl();
         }
 
         private void InitializeControl()
         {
-            FormSummary = new FormSummary(FileFormat);
-            FormDetection = new FormDetection(FileFormat.FileScan);
-            FormDetails = new FormDetails(FileFormat.FileScan);
+            FormSummary = new FormSummary(ScanFormat);
+            FormDetection = new FormDetection(ScanFormat.GetScan());
+            FormDetails = new FormDetails(ScanFormat.GetScan());
 
             this.Controls.Add(FormSummary);
             this.Controls.Add(FormDetection);

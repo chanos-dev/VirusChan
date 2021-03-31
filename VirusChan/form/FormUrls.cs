@@ -9,11 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using VirusChan.Api;
 using VirusChan.Model.VirusUrl;
+using VirusChan.Model;
 
 namespace VirusChan.form
 {
     public partial class FormUrls : UserControl
     {
+        private UrlScan UrlScan { get; set; }
+
         private ApiController ApiController;
         public FormUrls(ApiController ApiController)
         {
@@ -26,18 +29,18 @@ namespace VirusChan.form
             if (string.IsNullOrEmpty(txt_Urls.Text))
                 return;
 
-            UrlScan urlScan;
+            
             Program.logger.Info("URL 스캔 시작");
 
             Task.Factory.StartNew(() =>
             {
-                urlScan = ApiController.UrlReport(txt_Urls.Text); 
+                UrlScan = ApiController.UrlReport(txt_Urls.Text); 
                 Program.logger.Info($"{txt_Urls.Text} URL 스캔 시작");
 
-                ChangeText(lb_msg, urlScan.verbose_msg);
-                ChangeText(lb_scanDate, urlScan.scan_date);
+                ChangeText(lb_msg, UrlScan.verbose_msg);
+                ChangeText(lb_scanDate, UrlScan.scan_date);
 
-                if (urlScan.response_code == 1)
+                if (UrlScan.response_code == 1)
                     ChangeEnabled(btn_detail, true); 
                 else
                     ChangeEnabled(btn_detail, false);
@@ -72,7 +75,13 @@ namespace VirusChan.form
 
         private void btn_detail_Click(object sender, EventArgs e)
         {
-            using (FormFileScanDetail formFileScanDetail = new FormFileScanDetail(null))
+            UrlFormat urlFormat = new UrlFormat()
+            {
+                UrlName = txt_Urls.Text,
+                UrlScan = this.UrlScan,
+            };
+
+            using (FormFileScanDetail formFileScanDetail = new FormFileScanDetail(urlFormat))
             {
                 formFileScanDetail.ShowDialog();
             }

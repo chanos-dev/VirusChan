@@ -10,20 +10,21 @@ using System.Windows.Forms;
 using VirusChan.Model; 
 using VirusChan.Model.VirusFile;
 using System.Drawing.Drawing2D;
+using VirusChan.Interface;
 
 namespace VirusChan.form
 {
     public partial class FormSummary : UserControl
     {
-        private FileFormat FileFormat { get; set; }
+        private IFormat ScanFormat { get; set; }
 
         private int CircleWidth => 120;        
         private int inCircleWidthRate => Convert.ToInt32(CircleWidth * 0.25);
         private int CircleY => 30;
 
-        public FormSummary(FileFormat fileFormat)
+        public FormSummary(IFormat scanFormat)
         {
-            FileFormat = fileFormat;
+            ScanFormat = scanFormat;
 
             InitializeComponent();
             InitializeControl();
@@ -31,17 +32,18 @@ namespace VirusChan.form
 
         private void InitializeControl()
         {
-            lb_sha256.Text = FileFormat.FileScan.sha256 ?? string.Empty;
-            lb_fileInfo.Text = $"{FileFormat.FileName} / {FileFormat.FileSize}";
-            lb_scanDate.Text = FileFormat.FileScan.scan_date ?? string.Empty;
+            lb_unique.Text = ScanFormat.GetUnique() ?? string.Empty;
 
-            lb_count.Text = $"{FileFormat.FileScan.positives} / {FileFormat.FileScan.total}"; 
+            lb_fileInfo.Text = ScanFormat.GetName();
+            lb_scanDate.Text = ScanFormat.GetScan().scan_date ?? string.Empty;
+
+            lb_count.Text = $"{ScanFormat.GetScan().positives} / {ScanFormat.GetScan().total}"; 
             lb_count.Location = new Point((this.Size.Width / 2) - (lb_count.Size.Width / 2), CircleY + (CircleWidth / 2) - (lb_count.Size.Height / 2));
 
             pnl_Undetected.BackColor = Color.FromArgb(34, 181, 115);
 
-            float part = pnl_Undetected.Size.Width / FileFormat.FileScan.total;
-            int positivesParts = Convert.ToInt32(part * FileFormat.FileScan.positives);
+            float part = pnl_Undetected.Size.Width / ScanFormat.GetScan().total;
+            int positivesParts = Convert.ToInt32(part * ScanFormat.GetScan().positives);
 
             pnl_Detected.Location = pnl_Undetected.Location;
             pnl_Detected.BackColor = Color.FromArgb(255, 31, 74);
@@ -49,12 +51,12 @@ namespace VirusChan.form
         }
 
         private void FormSummary_Paint(object sender, PaintEventArgs e)
-        {
+        {  
             e.Graphics.SmoothingMode = SmoothingMode.HighQuality; 
             Graphics gh = e.Graphics;
                          
-            float part = 360 / FileFormat.FileScan.total;
-            int positivesParts = Convert.ToInt32(part * FileFormat.FileScan.positives); 
+            float part = 360 / ScanFormat.GetScan().total;
+            int positivesParts = Convert.ToInt32(part * ScanFormat.GetScan().positives); 
 
             using (Pen ellipse = new Pen(SystemColors.Control))
             {  
