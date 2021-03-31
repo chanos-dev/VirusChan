@@ -10,7 +10,7 @@
 #### FileScan
 - 파일 스캔
 
-![FileScan](image/FileScan.JPG)
+![FileScan](image/filescan.jpg)
 
 ---
 
