@@ -34,18 +34,33 @@ namespace VirusChan.form
 
             Task.Factory.StartNew(() =>
             {
-                UrlScan = ApiController.UrlReport(txt_Urls.Text); 
-                Program.logger.Info($"{txt_Urls.Text} URL 스캔 시작");
-
-                ChangeText(lb_msg, UrlScan.verbose_msg);
-                ChangeText(lb_scanDate, UrlScan.scan_date);
-
-                if (UrlScan.response_code == 1)
-                    ChangeEnabled(btn_detail, true); 
-                else
+                try
+                {
+                    ChangeEnabled(btn_start, false);
                     ChangeEnabled(btn_detail, false);
 
-                Program.logger.Info($"{txt_Urls.Text} URL 스캔 완료");
+                    UrlScan = ApiController.UrlReport(txt_Urls.Text);
+
+                    if (UrlScan is null)
+                    {
+                        Program.logger.Error($"{txt_Urls.Text} URL 스캔 에러");
+                        return;
+                    }
+
+                    Program.logger.Info($"{txt_Urls.Text} URL 스캔 시작");
+
+                    ChangeText(lb_msg, UrlScan.verbose_msg);
+                    ChangeText(lb_scanDate, UrlScan.scan_date);
+
+                    if (UrlScan.response_code == 1)
+                        ChangeEnabled(btn_detail, true); 
+
+                    Program.logger.Info($"{txt_Urls.Text} URL 스캔 완료");
+                }
+                finally
+                {
+                    ChangeEnabled(btn_start, true);
+                }
             });
         }
 
@@ -81,7 +96,7 @@ namespace VirusChan.form
                 UrlScan = this.UrlScan,
             };
 
-            using (FormFileScanDetail formFileScanDetail = new FormFileScanDetail(urlFormat))
+            using (FormScanDetail formFileScanDetail = new FormScanDetail(urlFormat))
             {
                 formFileScanDetail.ShowDialog();
             }

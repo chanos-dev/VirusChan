@@ -116,58 +116,79 @@ namespace VirusChan.form
             Program.logger.Info("파일 스캔 시작");
             
             Task.Factory.StartNew(() =>
-            {  
-                Parallel.ForEach(FileListView.Objects.Cast<FileFormat>(), fileFormat =>
-                { 
-                    Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 시작");
+            {
+                try
+                {
+                    ChangeEnabled(btn_start, false);
 
-                    fileFormat.FileState = VirusTotalState.Working;
-                    FileListView.UpdateObject(fileFormat);
-
-                    string fileMD5 = VirusTotal.GetMD5(fileFormat.FileFullPath);
-                    fileFormat.FileScan = ApiController.FileReport(fileMD5);
-
-                    if (fileFormat.FileScan is null)
+                    Parallel.ForEach(FileListView.Objects.Cast<FileFormat>(), fileFormat =>
                     {
-                        Program.logger.Error($"{fileFormat.FileFullPath} 파일 스캔 에러");
-                        fileFormat.FileState = VirusTotalState.Error;
+                        Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 시작");
+
+                        fileFormat.FileState = VirusTotalState.Working;
                         FileListView.UpdateObject(fileFormat);
-                    }
-                    else
-                    {
-                        if (fileFormat.FileScan.response_code == 0)
+
+                        string fileMD5 = VirusTotal.GetMD5(fileFormat.FileFullPath);
+                        fileFormat.FileScan = ApiController.FileReport(fileMD5);
+
+                        if (fileFormat.FileScan is null)
                         {
+                            Program.logger.Error($"{fileFormat.FileFullPath} 파일 스캔 에러");
+                            fileFormat.FileState = VirusTotalState.Error;
+                            FileListView.UpdateObject(fileFormat);
+                        }
+                        else
+                        {
+                            if (fileFormat.FileScan.response_code == 0)
+                            {
                             //파일 스캔
                             Program.logger.Info($"{fileFormat.FileFullPath} 파일 최초 스캔 필요, 스캔 중");
-                            fileFormat.FileScan = ApiController.FileScan(fileFormat.FileFullPath);
-                        }
-
-                        if (fileFormat.FileScan.response_code == -2 || (fileFormat.FileScan.response_code == 1 && fileFormat.FileScan.scans is null))
-                        {
-                            Program.logger.Info($"{fileFormat.FileFullPath} 파일 탐색 리스트 큐 추가, 스캔 중");
-                            while (true)
-                            {
-                                Thread.Sleep(10000);
-                                fileFormat.FileScan = ApiController.FileReport(fileMD5);
-
-                                if (fileFormat.FileScan != null)
-                                {
-                                    if (fileFormat.FileScan.response_code == 1)
-                                    {
-                                        ShowBallonTipHandler?.Invoke("스캔 완료", $"{fileFormat.FileName} : 스캔 완료");
-                                        break;
-                                    }
-                                }
-                                Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 중");
+                                fileFormat.FileScan = ApiController.FileScan(fileFormat.FileFullPath);
                             }
-                        }
 
-                        Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 완료");
-                        fileFormat.FileState = VirusTotalState.Finished;
-                        FileListView.UpdateObject(fileFormat);
-                    } 
-                });
+                            if (fileFormat.FileScan.response_code == -2 || (fileFormat.FileScan.response_code == 1 && fileFormat.FileScan.scans is null))
+                            {
+                                Program.logger.Info($"{fileFormat.FileFullPath} 파일 탐색 리스트 큐 추가, 스캔 중");
+                                while (true)
+                                {
+                                    Thread.Sleep(10000);
+                                    fileFormat.FileScan = ApiController.FileReport(fileMD5);
+
+                                    if (fileFormat.FileScan != null)
+                                    {
+                                        if (fileFormat.FileScan.response_code == 1)
+                                        {
+                                            ShowBallonTipHandler?.Invoke("스캔 완료", $"{fileFormat.FileName} : 스캔 완료");
+                                            break;
+                                        }
+                                    }
+                                    Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 중");
+                                }
+                            }
+
+                            Program.logger.Info($"{fileFormat.FileFullPath} 파일 스캔 완료");
+                            fileFormat.FileState = VirusTotalState.Finished;
+                            FileListView.UpdateObject(fileFormat);
+                        }
+                    });
+                }
+                finally
+                {
+                    ChangeEnabled(btn_start, true);
+                }
             });          
+        }
+
+        private void ChangeEnabled(Control control, bool flag)
+        {
+            if (control.InvokeRequired)
+            {
+                control.Invoke(new Action(() => ChangeEnabled(control, flag)));
+            }
+            else
+            {
+                control.Enabled = flag;
+            }
         }
 
         private void UpdateFileListObject(FileFormat fileFormat)
@@ -192,7 +213,7 @@ namespace VirusChan.form
                 switch (fileFormat.FileState)
                 {
                     case VirusTotalState.Finished:
-                        using (FormFileScanDetail formFileScanDetail = new FormFileScanDetail(fileFormat))
+                        using (FormScanDetail formFileScanDetail = new FormScanDetail(fileFormat))
                         {
                             formFileScanDetail.ShowDialog();
                         }
