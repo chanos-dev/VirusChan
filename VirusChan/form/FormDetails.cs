@@ -10,27 +10,59 @@ using System.Windows.Forms;
 using VirusChan.Model; 
 using VirusChan.Model.VirusFile;
 using System.Diagnostics;
+using VirusChan.Interface;
+using VirusChan.Model.VirusUrl;
 
 namespace VirusChan.form
 {
     public partial class FormDetails : UserControl
     {
-        private FileScan FileScan { get; set; } = null;
+        private IScan Scan { get; set; }
 
-        public FormDetails(FileScan fileScan)
+        public FormDetails(IScan scan)
         {
+            Scan = scan;
+
             InitializeComponent();
-            this.FileScan = fileScan;
-            InitializeContol();
+
+            switch(Scan)
+            {
+                case FileScan fileScan:
+                    InitializeFileScanContol(fileScan);
+                    break;
+                case UrlScan urlScan:
+                    InitializeUrlScanContol(urlScan);
+                    break;
+            }
         }
 
-        private void InitializeContol()
+        private void InitializeUrlScanContol(UrlScan urlScan)
         {
-            lb_md5Result.Text = FileScan.md5 ?? string.Empty;
-            lb_sha1Result.Text = FileScan.sha1 ?? string.Empty;
-            lb_sha256Result.Text = FileScan.sha256 ?? string.Empty;
-            llb_permalinkResult.Text = FileScan.permalink ?? string.Empty;
+            lb_info1.Text = string.Empty;
+            lb_info1Result.Text = string.Empty;
+
+            lb_info2.Text = nameof(urlScan.url).ToUpper();
+            lb_info2Result.Text = urlScan.url ?? string.Empty;
+
+            lb_info3.Text = string.Empty;
+            lb_info3Result.Text = string.Empty;
+
+            llb_permalinkResult.Text = urlScan.permalink ?? string.Empty;
         }
+
+        private void InitializeFileScanContol(FileScan fileScan)
+        {
+            lb_info1.Text = nameof(fileScan.md5).ToUpper();
+            lb_info1Result.Text = fileScan.md5 ?? string.Empty;
+
+            lb_info2.Text = nameof(fileScan.sha1).ToUpper();
+            lb_info2Result.Text = fileScan.sha1 ?? string.Empty;
+
+            lb_info3.Text = nameof(fileScan.sha256).ToUpper();
+            lb_info3Result.Text = fileScan.sha256 ?? string.Empty;
+
+            llb_permalinkResult.Text = fileScan.permalink ?? string.Empty;
+        } 
 
         private void label_DoubleClick(object sender, EventArgs e)
         {

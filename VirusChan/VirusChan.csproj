@@ -112,6 +112,8 @@
     <Compile Include="form\FormDetection.Designer.cs">
       <DependentUpon>FormDetection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interface\IFormat.cs" />
+    <Compile Include="Interface\IScan.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +125,7 @@
     <Compile Include="Model\FileFormat.cs" />
     <Compile Include="Model\ListViewData.cs" />
     <Compile Include="Model\FIleScan.cs" />
+    <Compile Include="Model\UrlFormat.cs" />
     <Compile Include="Model\UrlScan.cs" />
     <Compile Include="Model\VirusTotal.cs" />
     <Compile Include="Program.cs" />

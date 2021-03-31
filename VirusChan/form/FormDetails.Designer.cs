@@ -31,19 +31,19 @@
             this.panel_top = new System.Windows.Forms.Panel();
             this.lb_title = new System.Windows.Forms.Label();
             this.pnl_md5 = new System.Windows.Forms.Panel();
-            this.lb_md5 = new System.Windows.Forms.Label();
+            this.lb_info1 = new System.Windows.Forms.Label();
             this.pnl_sha1 = new System.Windows.Forms.Panel();
-            this.lb_sha1 = new System.Windows.Forms.Label();
+            this.lb_info2 = new System.Windows.Forms.Label();
             this.pnl_sha256 = new System.Windows.Forms.Panel();
-            this.lb_sha256 = new System.Windows.Forms.Label();
+            this.lb_info3 = new System.Windows.Forms.Label();
             this.pnl_permalink = new System.Windows.Forms.Panel();
             this.lb_permalink = new System.Windows.Forms.Label();
             this.pnl_md5result = new System.Windows.Forms.Panel();
-            this.lb_md5Result = new System.Windows.Forms.Label();
+            this.lb_info1Result = new System.Windows.Forms.Label();
             this.pnl_sha1result = new System.Windows.Forms.Panel();
-            this.lb_sha1Result = new System.Windows.Forms.Label();
+            this.lb_info2Result = new System.Windows.Forms.Label();
             this.pnl_sha256result = new System.Windows.Forms.Panel();
-            this.lb_sha256Result = new System.Windows.Forms.Label();
+            this.lb_info3Result = new System.Windows.Forms.Label();
             this.pnl_permalinkresult = new System.Windows.Forms.Panel();
             this.llb_permalinkResult = new System.Windows.Forms.LinkLabel();
             this.panel_top.SuspendLayout();
@@ -81,65 +81,65 @@
             // pnl_md5
             // 
             this.pnl_md5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.pnl_md5.Controls.Add(this.lb_md5);
+            this.pnl_md5.Controls.Add(this.lb_info1);
             this.pnl_md5.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_md5.Location = new System.Drawing.Point(0, 33);
             this.pnl_md5.Name = "pnl_md5";
             this.pnl_md5.Size = new System.Drawing.Size(585, 33);
             this.pnl_md5.TabIndex = 2;
             // 
-            // lb_md5
+            // lb_info1
             // 
-            this.lb_md5.AutoSize = true;
-            this.lb_md5.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_md5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lb_md5.Location = new System.Drawing.Point(3, 7);
-            this.lb_md5.Name = "lb_md5";
-            this.lb_md5.Size = new System.Drawing.Size(40, 19);
-            this.lb_md5.TabIndex = 0;
-            this.lb_md5.Text = "MD5";
+            this.lb_info1.AutoSize = true;
+            this.lb_info1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_info1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_info1.Location = new System.Drawing.Point(3, 7);
+            this.lb_info1.Name = "lb_info1";
+            this.lb_info1.Size = new System.Drawing.Size(40, 19);
+            this.lb_info1.TabIndex = 0;
+            this.lb_info1.Text = "MD5";
             // 
             // pnl_sha1
             // 
             this.pnl_sha1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.pnl_sha1.Controls.Add(this.lb_sha1);
+            this.pnl_sha1.Controls.Add(this.lb_info2);
             this.pnl_sha1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_sha1.Location = new System.Drawing.Point(0, 99);
             this.pnl_sha1.Name = "pnl_sha1";
             this.pnl_sha1.Size = new System.Drawing.Size(585, 33);
             this.pnl_sha1.TabIndex = 3;
             // 
-            // lb_sha1
+            // lb_info2
             // 
-            this.lb_sha1.AutoSize = true;
-            this.lb_sha1.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_sha1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lb_sha1.Location = new System.Drawing.Point(3, 7);
-            this.lb_sha1.Name = "lb_sha1";
-            this.lb_sha1.Size = new System.Drawing.Size(45, 19);
-            this.lb_sha1.TabIndex = 0;
-            this.lb_sha1.Text = "SHA1";
+            this.lb_info2.AutoSize = true;
+            this.lb_info2.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_info2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_info2.Location = new System.Drawing.Point(3, 7);
+            this.lb_info2.Name = "lb_info2";
+            this.lb_info2.Size = new System.Drawing.Size(45, 19);
+            this.lb_info2.TabIndex = 0;
+            this.lb_info2.Text = "SHA1";
             // 
             // pnl_sha256
             // 
             this.pnl_sha256.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.pnl_sha256.Controls.Add(this.lb_sha256);
+            this.pnl_sha256.Controls.Add(this.lb_info3);
             this.pnl_sha256.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_sha256.Location = new System.Drawing.Point(0, 165);
             this.pnl_sha256.Name = "pnl_sha256";
             this.pnl_sha256.Size = new System.Drawing.Size(585, 33);
             this.pnl_sha256.TabIndex = 4;
             // 
-            // lb_sha256
+            // lb_info3
             // 
-            this.lb_sha256.AutoSize = true;
-            this.lb_sha256.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_sha256.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
-            this.lb_sha256.Location = new System.Drawing.Point(3, 7);
-            this.lb_sha256.Name = "lb_sha256";
-            this.lb_sha256.Size = new System.Drawing.Size(66, 19);
-            this.lb_sha256.TabIndex = 0;
-            this.lb_sha256.Text = "SHA256";
+            this.lb_info3.AutoSize = true;
+            this.lb_info3.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_info3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
+            this.lb_info3.Location = new System.Drawing.Point(3, 7);
+            this.lb_info3.Name = "lb_info3";
+            this.lb_info3.Size = new System.Drawing.Size(66, 19);
+            this.lb_info3.TabIndex = 0;
+            this.lb_info3.Text = "SHA256";
             // 
             // pnl_permalink
             // 
@@ -165,68 +165,68 @@
             // pnl_md5result
             // 
             this.pnl_md5result.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_md5result.Controls.Add(this.lb_md5Result);
+            this.pnl_md5result.Controls.Add(this.lb_info1Result);
             this.pnl_md5result.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_md5result.Location = new System.Drawing.Point(0, 66);
             this.pnl_md5result.Name = "pnl_md5result";
             this.pnl_md5result.Size = new System.Drawing.Size(585, 33);
             this.pnl_md5result.TabIndex = 6;
             // 
-            // lb_md5Result
+            // lb_info1Result
             // 
-            this.lb_md5Result.AutoSize = true;
-            this.lb_md5Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_md5Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.lb_md5Result.Location = new System.Drawing.Point(3, 7);
-            this.lb_md5Result.Name = "lb_md5Result";
-            this.lb_md5Result.Size = new System.Drawing.Size(40, 19);
-            this.lb_md5Result.TabIndex = 0;
-            this.lb_md5Result.Text = "MD5";
-            this.lb_md5Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
+            this.lb_info1Result.AutoSize = true;
+            this.lb_info1Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_info1Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_info1Result.Location = new System.Drawing.Point(3, 7);
+            this.lb_info1Result.Name = "lb_info1Result";
+            this.lb_info1Result.Size = new System.Drawing.Size(40, 19);
+            this.lb_info1Result.TabIndex = 0;
+            this.lb_info1Result.Text = "MD5";
+            this.lb_info1Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
             // 
             // pnl_sha1result
             // 
             this.pnl_sha1result.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_sha1result.Controls.Add(this.lb_sha1Result);
+            this.pnl_sha1result.Controls.Add(this.lb_info2Result);
             this.pnl_sha1result.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_sha1result.Location = new System.Drawing.Point(0, 132);
             this.pnl_sha1result.Name = "pnl_sha1result";
             this.pnl_sha1result.Size = new System.Drawing.Size(585, 33);
             this.pnl_sha1result.TabIndex = 7;
             // 
-            // lb_sha1Result
+            // lb_info2Result
             // 
-            this.lb_sha1Result.AutoSize = true;
-            this.lb_sha1Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_sha1Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.lb_sha1Result.Location = new System.Drawing.Point(3, 7);
-            this.lb_sha1Result.Name = "lb_sha1Result";
-            this.lb_sha1Result.Size = new System.Drawing.Size(40, 19);
-            this.lb_sha1Result.TabIndex = 0;
-            this.lb_sha1Result.Text = "MD5";
-            this.lb_sha1Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
+            this.lb_info2Result.AutoSize = true;
+            this.lb_info2Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_info2Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_info2Result.Location = new System.Drawing.Point(3, 7);
+            this.lb_info2Result.Name = "lb_info2Result";
+            this.lb_info2Result.Size = new System.Drawing.Size(40, 19);
+            this.lb_info2Result.TabIndex = 0;
+            this.lb_info2Result.Text = "MD5";
+            this.lb_info2Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
             // 
             // pnl_sha256result
             // 
             this.pnl_sha256result.BackColor = System.Drawing.SystemColors.Control;
-            this.pnl_sha256result.Controls.Add(this.lb_sha256Result);
+            this.pnl_sha256result.Controls.Add(this.lb_info3Result);
             this.pnl_sha256result.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnl_sha256result.Location = new System.Drawing.Point(0, 198);
             this.pnl_sha256result.Name = "pnl_sha256result";
             this.pnl_sha256result.Size = new System.Drawing.Size(585, 33);
             this.pnl_sha256result.TabIndex = 8;
             // 
-            // lb_sha256Result
+            // lb_info3Result
             // 
-            this.lb_sha256Result.AutoSize = true;
-            this.lb_sha256Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_sha256Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
-            this.lb_sha256Result.Location = new System.Drawing.Point(3, 7);
-            this.lb_sha256Result.Name = "lb_sha256Result";
-            this.lb_sha256Result.Size = new System.Drawing.Size(40, 19);
-            this.lb_sha256Result.TabIndex = 0;
-            this.lb_sha256Result.Text = "MD5";
-            this.lb_sha256Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
+            this.lb_info3Result.AutoSize = true;
+            this.lb_info3Result.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_info3Result.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
+            this.lb_info3Result.Location = new System.Drawing.Point(3, 7);
+            this.lb_info3Result.Name = "lb_info3Result";
+            this.lb_info3Result.Size = new System.Drawing.Size(40, 19);
+            this.lb_info3Result.TabIndex = 0;
+            this.lb_info3Result.Text = "MD5";
+            this.lb_info3Result.DoubleClick += new System.EventHandler(this.label_DoubleClick);
             // 
             // pnl_permalinkresult
             // 
@@ -292,19 +292,19 @@
         private System.Windows.Forms.Panel panel_top;
         private System.Windows.Forms.Label lb_title;
         private System.Windows.Forms.Panel pnl_md5;
-        private System.Windows.Forms.Label lb_md5;
+        private System.Windows.Forms.Label lb_info1;
         private System.Windows.Forms.Panel pnl_sha1;
-        private System.Windows.Forms.Label lb_sha1;
+        private System.Windows.Forms.Label lb_info2;
         private System.Windows.Forms.Panel pnl_sha256;
-        private System.Windows.Forms.Label lb_sha256;
+        private System.Windows.Forms.Label lb_info3;
         private System.Windows.Forms.Panel pnl_permalink;
         private System.Windows.Forms.Label lb_permalink;
         private System.Windows.Forms.Panel pnl_md5result;
-        private System.Windows.Forms.Label lb_md5Result;
+        private System.Windows.Forms.Label lb_info1Result;
         private System.Windows.Forms.Panel pnl_sha1result;
-        private System.Windows.Forms.Label lb_sha1Result;
+        private System.Windows.Forms.Label lb_info2Result;
         private System.Windows.Forms.Panel pnl_sha256result;
-        private System.Windows.Forms.Label lb_sha256Result;
+        private System.Windows.Forms.Label lb_info3Result;
         private System.Windows.Forms.Panel pnl_permalinkresult;
         private System.Windows.Forms.LinkLabel llb_permalinkResult;
     }

@@ -4,505 +4,511 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VirusChan.Interface;
 
 namespace VirusChan.Model.VirusUrl
 {
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
-    public class CMCThreatIntelligence
+    interface IUrlScanInfo
+    {
+        bool detected { get; set; }
+        string result { get; set; } 
+    } 
+
+    public class CMCThreatIntelligence : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class CLEANMX
+    public class CLEANMX : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class DNS8
+    public class DNS8 : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class MalSilo
+    public class MalSilo : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class NotMining
+    public class NotMining : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class AICCMONITORAPP
+    public class AICCMONITORAPP : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class VXVault
+    public class VXVault : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Securolytics
+    public class Securolytics : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Tencent
+    public class Tencent : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class MalwarePatrol
+    public class MalwarePatrol : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Armis
+    public class Armis : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class MalBeacon
+    public class MalBeacon : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class ComodoValkyrieVerdict
+    public class ComodoValkyrieVerdict : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class PhishLabs
+    public class PhishLabs : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class EmergingThreats
+    public class EmergingThreats : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Sangfor
+    public class Sangfor : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class K7AntiVirus
+    public class K7AntiVirus : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class VirusdieExternalSiteScan
+    public class VirusdieExternalSiteScan : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class ArtistsAgainst419
+    public class ArtistsAgainst419 : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class CINSArmy
+    public class CINSArmy : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Cyren
+    public class Cyren : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Quttera
+    public class Quttera : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class AegisLabWebGuard
+    public class AegisLabWebGuard : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class MalwareDomainList
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-        public string detail { get; set; }
-    }
-
-    public class Lumu
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Zvelo
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class GoogleSafebrowsing
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Kaspersky
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class BitDefender
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class GreenSnow
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class IPsum
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class GData
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class CyberCrime
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class MalwareDomainBlocklist
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class AutoShun
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class FeodoTracker
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class WebSecurityGuard
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Cyan
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class CyRadar
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class DesenmascaraMe
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class ADMINUSLabs
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class SCUMWAREOrg
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class DrWeb
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class AlienVault
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Emsisoft
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Spamhaus
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class MalwaresComURLchecker
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Phishtank
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class EonScope
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Malwared
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Avira
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class CiscoTalosIPBlacklist
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class OpenPhish
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class AntiyAVL
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class ForcepointThreatSeeker
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Spam404
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Trustwave
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class Certego
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class URLhaus
-    {
-        public bool detected { get; set; }
-        public string result { get; set; }
-    }
-
-    public class YandexSafebrowsing
+    public class MalwareDomainList : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
         public string detail { get; set; }
     }
 
-    public class ESET
+    public class Lumu : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Threatsourcing
+    public class Zvelo : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class BlockList
+    public class GoogleSafebrowsing : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class SecureBrain
+    public class Kaspersky : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Nucleon
+    public class BitDefender : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class PREBYTES
+    public class GreenSnow : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Sophos
+    public class IPsum : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Blueliv
+    public class GData : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class HopliteIndustries
+    public class CyberCrime : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Netcraft
+    public class MalwareDomainBlocklist : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class CRDF
+    public class AutoShun : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class ThreatHive
+    public class FeodoTracker : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class BADWAREINFO
+    public class WebSecurityGuard : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class FraudScore
+    public class Cyan : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class QuickHeal
+    public class CyRadar : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Rising
+    public class DesenmascaraMe : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class StopBadware
+    public class ADMINUSLabs : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class SucuriSiteCheck
+    public class SCUMWAREOrg : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class Fortinet
+    public class DrWeb : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class StopForumSpam
+    public class AlienVault : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class ZeroCERT
+    public class Emsisoft : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class BaiduInternational
+    public class Spamhaus : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
     }
 
-    public class PhishingDatabase
+    public class MalwaresComURLchecker : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Phishtank : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class EonScope : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Malwared : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Avira : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class CiscoTalosIPBlacklist : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class OpenPhish : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class AntiyAVL : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class ForcepointThreatSeeker : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Spam404 : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Trustwave : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Certego : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class URLhaus : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class YandexSafebrowsing : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+        public string detail { get; set; }
+    }
+
+    public class ESET : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Threatsourcing : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class BlockList : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class SecureBrain : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Nucleon : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class PREBYTES : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Sophos : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Blueliv : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class HopliteIndustries : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Netcraft : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class CRDF : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class ThreatHive : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class BADWAREINFO : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class FraudScore : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class QuickHeal : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Rising : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class StopBadware : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class SucuriSiteCheck : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class Fortinet : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class StopForumSpam : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class ZeroCERT : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class BaiduInternational : IUrlScanInfo
+    {
+        public bool detected { get; set; }
+        public string result { get; set; }
+    }
+
+    public class PhishingDatabase : IUrlScanInfo
     {
         public bool detected { get; set; }
         public string result { get; set; }
@@ -605,19 +611,23 @@ namespace VirusChan.Model.VirusUrl
         public PhishingDatabase PhishingDatabase { get; set; }
     }
 
-    public class UrlScan
+    public class UrlScan : IScan
     {
+        #region interface property
         public string scan_id { get; set; }
         public string resource { get; set; }
-        public string url { get; set; }
         public int response_code { get; set; }
         public string scan_date { get; set; }
         public string permalink { get; set; }
         public string verbose_msg { get; set; }
-        public object filescan_id { get; set; }
         public int positives { get; set; }
         public int total { get; set; }
+        #endregion
+
+
+        public object filescan_id { get; set; }
         public Scans scans { get; set; }
+        public string url { get; set; }
     }
 
 

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.pnl_Undetected = new System.Windows.Forms.Panel();
-            this.lb_sha256 = new System.Windows.Forms.Label();
+            this.lb_unique = new System.Windows.Forms.Label();
             this.lb_fileInfo = new System.Windows.Forms.Label();
             this.lb_scanDate = new System.Windows.Forms.Label();
             this.lb_count = new System.Windows.Forms.Label();
@@ -44,15 +44,15 @@
             this.pnl_Undetected.Size = new System.Drawing.Size(579, 20);
             this.pnl_Undetected.TabIndex = 0;
             // 
-            // lb_sha256
+            // lb_unique
             // 
-            this.lb_sha256.Font = new System.Drawing.Font("Comic Sans MS", 10F);
-            this.lb_sha256.Location = new System.Drawing.Point(3, 210);
-            this.lb_sha256.Name = "lb_sha256";
-            this.lb_sha256.Size = new System.Drawing.Size(579, 44);
-            this.lb_sha256.TabIndex = 1;
-            this.lb_sha256.Text = "sha256";
-            this.lb_sha256.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lb_unique.Font = new System.Drawing.Font("Comic Sans MS", 10F);
+            this.lb_unique.Location = new System.Drawing.Point(3, 210);
+            this.lb_unique.Name = "lb_unique";
+            this.lb_unique.Size = new System.Drawing.Size(579, 44);
+            this.lb_unique.TabIndex = 1;
+            this.lb_unique.Text = "unique";
+            this.lb_unique.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lb_fileInfo
             // 
@@ -100,7 +100,7 @@
             this.Controls.Add(this.lb_count);
             this.Controls.Add(this.lb_scanDate);
             this.Controls.Add(this.lb_fileInfo);
-            this.Controls.Add(this.lb_sha256);
+            this.Controls.Add(this.lb_unique);
             this.Controls.Add(this.pnl_Undetected);
             this.Font = new System.Drawing.Font("Comic Sans MS", 9F);
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(130)))), ((int)(((byte)(242)))));
@@ -115,7 +115,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnl_Undetected;
-        private System.Windows.Forms.Label lb_sha256;
+        private System.Windows.Forms.Label lb_unique;
         private System.Windows.Forms.Label lb_fileInfo;
         private System.Windows.Forms.Label lb_scanDate;
         private System.Windows.Forms.Label lb_count;

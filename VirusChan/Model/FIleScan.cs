@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VirusChan.Interface;
 
 namespace VirusChan.Model.VirusFile
 {
@@ -598,11 +599,10 @@ namespace VirusChan.Model.VirusFile
         public Qihoo360 Qihoo360 { get; set; }
     }
 
-    public class FileScan
+    public class FileScan : IScan
     {
-        public Scans scans { get; set; }
+        #region interface property
         public string scan_id { get; set; }
-        public string sha1 { get; set; }
         public string resource { get; set; }
         public int response_code { get; set; }
         public string scan_date { get; set; }
@@ -610,6 +610,10 @@ namespace VirusChan.Model.VirusFile
         public string verbose_msg { get; set; }
         public int total { get; set; }
         public int positives { get; set; }
+        #endregion
+
+        public string sha1 { get; set; }
+        public Scans scans { get; set; }
         public string sha256 { get; set; }
         public string md5 { get; set; }
     }
